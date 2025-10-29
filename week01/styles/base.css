@@ -1,0 +1,19 @@
+/* Base Styles Include the Color Pallette for the Website*/
+:root {
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Ubuntu', sans-serif;
+    --primary-color: #000000;
+    --secondary-color: #3474d3;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 24px auto 44px;
+}
+
+.hamburger::before {
+    content: "\2630";
+}
+.hamburger.show::before {
+    content: "\00D7";
+}
