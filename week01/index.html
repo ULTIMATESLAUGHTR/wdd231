@@ -17,15 +17,14 @@
 <body>
     <header>
         <h1>WDD231: Front End Development - Aaron Islas</h1>
-        <img src="images/house-svgrepo-com.svg" alt="House Icon" width="1" height="1">
+        <img class="house-logo" src="images/house-logo.svg" alt="House Icon" width="1" height="1">
         <span>Welcome to my Homepage!</span>
         <button id="nav-button" class="hamburger" aria-label="navigation"></button>
-    <nav class= "home-nav-list">
+    <nav id="nav-bar" class= "navigation">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="about.html">Dedicated Temples</a></li>
+            <li><a href="projects.html">Announced Temples</a></li>
         </ul>
     </nav>
     </header>
@@ -36,6 +35,14 @@
         </section>
     </main>
     <footer class="home-footer">
+        <div class="footer-content">
+            <h2>Follow me through my Social Media!</h2>
+            <ul>
+                <li><a href ="https://www.linkedin.com/in/aaron-islas-b5577a305/"><img src="images/linked-in-logo.svg" alt="LinkedIn Logo" width="1" height="1"></a></li>
+                <li><a href ="https://github.com/ULTIMATESLAUGHTR/wdd231"><img src="images/github-logo.svg" alt="GitHub Logo" width="1" height="1"></a></li>
+                <li><a href ="https://www.facebook.com/aaronislas23"><img src="images/facebook-logo.svg" alt="Facebook Logo" width="1" height="1"></a></li>
+            </ul>
+        </div>
         <p>&copy; Copyright Year: <span id="currentyear"></span></p>
         <p>Last Modified: <span id="lastModified"></span></p>
         <p>&#10070; Aaron Islas &#10070; Utah, United States of America</p>

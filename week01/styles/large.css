@@ -1,0 +1,11 @@
+/* Large Styles Include the Color Pallette for the Desktop View Website*/
+:root {
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Ubuntu', sans-serif;
+    --primary-color: #000000;
+    --secondary-color: #3474d3;
+}
+/*This will be the Ruleset for Header and Nav Bars Lines 8-20 for Desktop View*/
+.navigation {
+    display: flex;
+}

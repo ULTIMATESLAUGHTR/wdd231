@@ -4,11 +4,21 @@
     --secondary-font: 'Ubuntu', sans-serif;
     --primary-color: #000000;
     --secondary-color: #3474d3;
+    --primary-bg-color: gray;
+    --secondary-bg-color: lightgray;
 }
-
+/*This will be the Ruleset for Header and Nav Bars Lines 8-20ish*/
 header {
     display: grid;
     grid-template-columns: 24px auto 44px;
+}
+
+.navigation {
+    display: none;
+}
+
+.navigation.show {
+    display: block;
 }
 
 .hamburger::before {
