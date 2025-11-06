@@ -1,11 +1,35 @@
-/* Large Styles Include the Color Pallette for the Desktop View Website*/
-:root {
-    --primary-font: 'Roboto', sans-serif;
-    --secondary-font: 'Ubuntu', sans-serif;
-    --primary-color: #000000;
-    --secondary-color: #3474d3;
-}
-/*This will be the Ruleset for Header and Nav Bars Lines 8-20 for Desktop View*/
-.navigation {
-    display: flex;
+/* Large Styles for Desktop View (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    /* Keep the root variables consistent with base.css */
+    :root {
+        --primary-font: 'Roboto', sans-serif;
+        --secondary-font: 'Ubuntu', sans-serif;
+        --primary-color: #000000;
+        --secondary-color: #3474d3;
+    }
+
+    /* Desktop-specific styles */
+    .navigation {
+        display: flex;
+        position: static; /* Override the fixed position from mobile */
+        top: auto;
+        padding: 0;
+    }
+
+    /* Hide hamburger menu in desktop view */
+    .hamburger {
+        display: none;
+    }
+
+    /* Show navigation by default in desktop */
+    #nav-bar {
+        display: flex;
+    }
+
+    /* Adjust navigation layout for desktop */
+    .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem;
+    }
 }

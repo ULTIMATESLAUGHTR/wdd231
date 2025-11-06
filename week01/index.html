@@ -7,7 +7,7 @@
     <meta name="author" content="Aaron Islas">
     <meta name="description" content="This is the Homepage for WDD231 Week 1's Assignment">
     <link rel="normalize" href="/week01/styles/normalize.css">
-    <link rel="stylesheet" href="/week01/styles/base.css">
+    <link rel="stylesheet" href="/week01/styles/small.css">
     <link rel="stylesheet" href="/week01/styles/large.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,32 +15,33 @@
     <title>Home Website for WDD231 - Aaron Islas</title>
 </head>
 <body>
-    <header>
-        <h1>WDD231: Front End Development - Aaron Islas</h1>
+    <header class="home-header">
+        <h1 class="header-title">WDD231: Front End Development</h1>
         <img class="house-logo" src="images/house-logo.svg" alt="House Icon" width="1" height="1">
-        <span>Welcome to my Homepage!</span>
+        <!--This is the JS insert for the Hamburger Button on line 22-->
         <button id="nav-button" class="hamburger" aria-label="navigation"></button>
     <nav id="nav-bar" class= "navigation">
-        <ul>
-            <li class="current"><a href="index.html">Home</a></li>
-            <li><a href="about.html">Dedicated Temples</a></li>
-            <li><a href="projects.html">Announced Temples</a></li>
+        <ul class ="nav-links">
+            <li class="nav-list"><a href="index.html">Home</a></li>
+            <li class="nav-list"><a href="about.html">Dedicated Temples</a></li>
+            <li class="nav-list"><a href="projects.html">Announced Temples</a></li>
         </ul>
     </nav>
     </header>
     <main>
-        <section>
+        <section class="opening-box">
             <h2>Introduction</h2>
+            <p class="current-page-status">Current Page: Home</p>
             <p>This is the homepage for my WDD231 class. Here you will find links to other pages including About Me, Projects, and Contact Me.</p>
         </section>
     </main>
     <footer class="home-footer">
-        <div class="footer-content">
+        <div class="footer-links">
             <h2>Follow me through my Social Media!</h2>
             <ul>
-                <li><a href ="https://www.linkedin.com/in/aaron-islas-b5577a305/"><img src="images/linked-in-logo.svg" alt="LinkedIn Logo" width="1" height="1"></a></li>
-                <li><a href ="https://github.com/ULTIMATESLAUGHTR/wdd231"><img src="images/github-logo.svg" alt="GitHub Logo" width="1" height="1"></a></li>
-                <li><a href ="https://www.facebook.com/aaronislas23"><img src="images/facebook-logo.svg" alt="Facebook Logo" width="1" height="1"></a></li>
+                <li><a href ="https://www.linkedin.com/in/aaron-islas-b5577a305/"><img src="images/linked-in-logo.svg" alt="LinkedIn Logo"></a></li>
+                <li><a href ="https://github.com/ULTIMATESLAUGHTR/wdd231"><img src="images/github-logo.svg" alt="GitHub Logo"></a></li>
+                <li><a href ="https://www.facebook.com/aaronislas23"><img src="images/facebook-logo.svg" alt="Facebook Logo"></a></li>
             </ul>
         </div>
         <p>&copy; Copyright Year: <span id="currentyear"></span></p>

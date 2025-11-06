@@ -1,0 +1,214 @@
+/* Base Styles Include the Color Pallette for the Website*/
+:root {
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Ubuntu', sans-serif;
+    --primary-color: #000000;
+    --secondary-color: #3474d3;
+    --primary-bg-color: gray;
+    --secondary-bg-color: lightgray;
+    --primary-font-size: 1.2rem;
+}
+@media screen and (max-width: 767px) {
+    .navigation { display: none; }
+    .navigation.show { display: flex; /* This is to ensure that the hamburger menu hides the nav bar on mobile view */
+    }
+}
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--secondary-bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30; /* Use this to ensure header stays on top of other content */
+    /* Make sure to use this to keep a consistent layout for nav toggle */
+    min-height: 60px;
+}
+.house-logo {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.header-title {
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-left: 45px;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 50px 80px;
+}   
+.navigation {
+    display: none;
+    position: right; /* position under the header */
+    top: 100%; /* place directly after header's height */
+    left: 0;
+    right: 0;
+    z-index: 20; /* lower than header so header/title stays on top */
+    background-color: var(--secondary-bg-color);
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 2rem;
+    padding: 30px 16px;
+    text-decoration: none;
+    font-size: var(--primary-font-size);
+    text-transform: uppercase;
+    transition: all ease-in-out 100ms;
+    border-color: var(--secondary-color);
+    border-bottom: 2px solid transparent;
+    border-radius: 50px 80px;
+    background-color: #3474d3;
+    border-color: #000000;
+}
+
+/* Nav link text color: control link color here (single source of truth) */
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Hover / focus for nav links */
+.nav-links a:hover,
+.nav-links a:focus {
+    color: white;
+    border-color: var(--secondary-bg-color);
+    text-decoration: underline;
+}
+
+.current-page-status {
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-left: 30px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.hamburger {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    right: 20px;
+    top: 10px;
+    z-index: 40; /* Keep button above everything */
+}
+.hamburger::before {
+    content: "\2630";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    line-height: 1;
+}
+.hamburger.show::before {
+    content: "\00D7";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    line-height: 1;
+}
+.current-nav-item {
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.opening-box {
+    margin: 200px 20px 20px 20px; /* top margin to avoid header overlap */
+    padding: 20px;
+    background-color: var(--primary-bg-color);
+    border-radius: 10px;
+}
+
+.current-page-status {
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-left: 30px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.home-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.home-footer a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+}
+/* Footer social icons: left-to-right and evenly spaced */
+.footer-links {
+    margin: 0 auto;
+}
+.footer-links h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+.footer-links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* center the group */
+    gap: 1.7rem; /* even spacing between icons */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+}
+.footer-links li {
+    display: inline-block;
+}
+.footer-links li img {
+    width: 60px; /* consistent icon size */
+    height: auto;
+    display: block;
+}
+
+.footer-links li img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
