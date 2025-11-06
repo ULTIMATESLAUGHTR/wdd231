@@ -34,7 +34,7 @@
 .header-title {
     font-family: var(--primary-font);
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: white;
     margin-left: 45px;
     background-color: var(--secondary-color);
     padding: 10px;
@@ -236,10 +236,11 @@ main {
     padding: 0.75rem 1.5rem;
     border: 2px solid var(--primary-color);
     background: var(--secondary-bg-color);
-    color: var(--primary-color);
+    /* Use the darker secondary color for better contrast on light background */
+    color: var(--secondary-color);
     cursor: pointer;
     border-radius: var(--border-radius);
-    font-weight: 600;
+    font-weight: 700;
     transition: all var(--transition-speed) ease-in-out;
     position: relative;
     overflow: hidden;
@@ -386,24 +387,27 @@ main {
 
 .home-footer {
     text-align: center;
-    padding: 10px;
-    background-color: var(--secondary-bg-color);
-    color: var(--primary-color);
+    padding: 12px 10px;
+    /* Darker footer background with high-contrast white text for accessibility */
+    background-color: var(--secondary-color);
+    color: var(--primary-bg-color);
     position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 .home-footer a {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     flex-direction: row;
+    color: inherit; /* ensure links use the high-contrast footer text color */
 }
 /* Footer social icons: left-to-right and evenly spaced */
 .footer-links {
