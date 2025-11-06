@@ -1,0 +1,172 @@
+/* Large Styles for Desktop View (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    /* Keep the root variables consistent with small.css */
+    :root {
+        --primary-font: 'Roboto', sans-serif;
+        --secondary-font: 'Ubuntu', sans-serif;
+        --primary-color: #3474d3;
+        --secondary-color: #2c3e50;
+        --primary-bg-color: #ffffff;
+        --secondary-bg-color: #f8f9fa;
+        --accent-color: #27ae60;
+        --border-radius: 8px;
+        --transition-speed: 0.3s;
+    }
+
+    /* Desktop-specific styles */
+    .home-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 20px;
+        position: fixed;
+    }
+
+    /* Keep logo in its original position */
+    .house-logo {
+        position: absolute;
+        top: 35px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Keep title in its original position */
+    .header-title {
+        position: absolute;
+        left: 45px;
+        margin-left: 20px;
+    }
+
+    /* Improved navigation for desktop */
+    .navigation {
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem 2rem;
+        margin: 0;
+        border-radius: var(--border-radius);
+        background-color: var(--primary-color);
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        color: var(--primary-bg-color);
+    }
+
+    /* Profile section desktop adjustments */
+    .profile-container {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        margin: 2rem auto;
+    }
+
+    .photo-frame {
+        background-color: var(--secondary-bg-color);
+        padding: 1.5rem;
+    }
+
+    /* About me box desktop adjustments */
+    .about-me-box {
+        background-color: var(--secondary-bg-color);
+        border: 1px solid rgba(44, 62, 80, 0.1);
+    }
+
+    /* Navigation desktop color adjustments */
+    .nav-links {
+        background-color: var(--primary-color);
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        color: var(--primary-bg-color);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        color: var(--accent-color);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .current-nav-item {
+        color: var(--accent-color) !important;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Course filters desktop adjustments */
+    .filter-btn {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        background-color: var(--secondary-bg-color);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        background-color: var(--primary-color);
+        color: var(--primary-bg-color);
+    }
+
+    .filter-btn::after {
+        background-color: var(--primary-color);
+    }
+
+    /* Course items desktop adjustments */
+    .course-item {
+        border-color: var(--secondary-color);
+        background-color: var(--primary-bg-color);
+    }
+
+    .course-item:hover {
+        border-color: var(--primary-color);
+    }
+
+    .course-item.completed {
+        border-color: var(--accent-color);
+        background-color: rgba(39, 174, 96, 0.1);
+    }
+
+    .checkmark {
+        color: var(--accent-color);
+    }
+
+    /* Credits counter desktop adjustments */
+    #total-credits {
+        background-color: var(--primary-color);
+        color: var(--primary-bg-color);
+    }
+
+    /* Footer desktop adjustments */
+    .home-footer {
+        background-color: var(--secondary-bg-color);
+        color: var(--primary-color);
+    }
+
+    /* Hide hamburger menu in desktop view */
+    .hamburger {
+        display: none;
+    }
+
+    /* Show navigation by default in desktop */
+    #nav-bar {
+        display: flex;
+    }
+
+    /* Adjust navigation layout for desktop */
+    .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem;
+    }
+}
