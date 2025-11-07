@@ -4,13 +4,15 @@
     :root {
         --primary-font: 'Roboto', sans-serif;
         --secondary-font: 'Ubuntu', sans-serif;
-        --primary-color: #3474d3;
-        --secondary-color: #2c3e50;
+        --primary-color: #2563eb;     /* Darker blue for better contrast */
+        --secondary-color: #1e293b;   /* Darker slate for better contrast */
         --primary-bg-color: #ffffff;
-        --secondary-bg-color: #f8f9fa;
-        --accent-color: #27ae60;
+        --secondary-bg-color: #f1f5f9;
+        --accent-color: #15803d;      /* Darker green for better contrast */
+        --nav-active-bg: rgba(255, 255, 255, 0.2);
         --border-radius: 8px;
         --transition-speed: 0.3s;
+        --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     /* Desktop-specific styles */
@@ -20,6 +22,9 @@
         align-items: center;
         padding: 10px 20px;
         position: fixed;
+        background-color: var(--secondary-bg-color);
+        box-shadow: var(--header-shadow);
+        z-index: 1000;
     }
 
     /* Keep logo in its original position */
@@ -67,10 +72,65 @@
         color: var(--primary-bg-color);
     }
 
+    /* Main content layout for desktop */
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "status status"
+            "about photo"
+            "courses courses";
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 80px auto 0;
+    }
+
+    /* About me section takes full width at top */
+    .home-status-box {
+        grid-area: status;
+    }
+
+    /* About me box desktop adjustments */
+    .about-me-box {
+        background-color: var(--secondary-bg-color);
+        border: 1px solid rgba(44, 62, 80, 0.1);
+        grid-area: about;
+        margin: 0;
+        height: auto;
+    }
+
+    /* Create a wrapper for photo section */
+    .photo-section-wrapper {
+        grid-area: photo;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-self: start;
+        margin: 0;
+    }
+
+    /* Photo section container */
+    .student-photo-title {
+        width: 100%;
+        max-width: 400px;
+        font-size: 1.8rem;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
     /* Profile section desktop adjustments */
     .profile-container {
         background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        margin: 2rem auto;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    /* Ensure web certificate courses box spans full width */
+    .web-certificate-courses-box {
+        grid-area: courses;
     }
 
     .photo-frame {
@@ -78,26 +138,30 @@
         padding: 1.5rem;
     }
 
-    /* About me box desktop adjustments */
-    .about-me-box {
-        background-color: var(--secondary-bg-color);
-        border: 1px solid rgba(44, 62, 80, 0.1);
+    /* Ensure the web certificate courses box spans full width */
+    .web-certificate-courses-box {
+        grid-column: 1 / -1;
     }
 
     /* Navigation desktop color adjustments */
     .nav-links {
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
         border-bottom: none;
+        padding: 1rem 2rem;
     }
 
     .nav-links a {
         color: var(--primary-bg-color);
+        font-weight: 700;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links a:hover,
     .nav-links a:focus {
-        color: var(--accent-color);
-        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--primary-bg-color);
+        background-color: var(--primary-color);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .current-nav-item {

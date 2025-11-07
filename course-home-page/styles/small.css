@@ -1,12 +1,15 @@
 /* Base styles and variables */
 :root {
-    --primary-color: #3474d3;
-    --secondary-color: #2c3e50;
+    /* Updated colors for WCAG AA compliance */
+    --primary-color: #2563eb;     /* Darker blue for better contrast */
+    --secondary-color: #1e293b;   /* Darker slate for better contrast */
     --primary-bg-color: #ffffff;
-    --secondary-bg-color: #f8f9fa;
-    --accent-color: #27ae60;
+    --secondary-bg-color: #f1f5f9; /* Slightly darker for better contrast */
+    --accent-color: #15803d;      /* Darker green for better contrast */
+    --nav-active-bg: rgba(255, 255, 255, 0.2); /* For active navigation items */
     --border-radius: 8px;
     --transition-speed: 0.3s;
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .home-header {
@@ -34,12 +37,22 @@
 .header-title {
     font-family: var(--primary-font);
     font-size: 1.5rem;
-    color: white;
+    color: var(--primary-bg-color);
     margin-left: 45px;
     background-color: var(--secondary-color);
-    padding: 10px;
+    padding: 12px 20px;
     border-radius: 50px 80px;
+    font-weight: 700;
+    box-shadow: var(--header-shadow);
+    transition: all var(--transition-speed) ease-in-out;
 }   
+
+/* Enhanced navigation wayfinding */
+.header-title[aria-current="page"] {
+    background-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
 .navigation {
     display: none;
     position: fixed; /* position under the header */
@@ -63,13 +76,15 @@
     list-style: none;
     gap: 1rem;
     margin: 0;
-    padding: 1rem;
+    padding: 1.2rem;
     text-decoration: none;
     font-size: 1.1rem;
+    font-weight: 600;
     text-transform: uppercase;
     transition: all var(--transition-speed) ease-in-out;
-    background-color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color); /* Darker background for better contrast */
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: var(--header-shadow);
 }
 
 /* Nav link text color: control link color here (single source of truth) */
@@ -79,15 +94,19 @@
     padding: 0.75rem;
     display: block;
     transition: all var(--transition-speed) ease-in-out;
+    font-weight: 700; /* Bolder text for better readability */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Subtle text shadow for enhanced contrast */
 }
 
 /* Hover / focus for nav links */
 .nav-links a:hover,
 .nav-links a:focus {
-    color: var(--accent-color);
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary-bg-color);
+    background-color: var(--primary-color);
     text-decoration: none;
     border-radius: var(--border-radius);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .current-page-status {
@@ -133,11 +152,24 @@
     line-height: 1;
 }
 .current-nav-item {
-    font-weight: bold;
-    color: var(--accent-color) !important;
+    font-weight: 700;
+    color: var(--primary-bg-color) !important;
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--nav-active-bg);
     border-radius: var(--border-radius);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Wayfinding indicator for current nav item */
+.current-nav-item::before {
+    content: '→';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-bg-color);
+    font-weight: bold;
 }
 
 /* Main content styles */
@@ -151,13 +183,14 @@ main {
 .student-photo-title {
     font-family: var(--primary-font);
     font-size: 1.8rem;
-    color: var(--primary-color);
+    color: var(--primary-bg-color);
     margin-top: 2rem;
     text-align: center;
     border-color:#3474d3;
     border-style:solid;
     border-width: 2px;
-    background-color: var(--secondary-bg-color);
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
 }
 
 /* About me section styles */
