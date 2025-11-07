@@ -1,0 +1,475 @@
+/* Base styles and variables */
+:root {
+    /* Updated colors for WCAG AA compliance */
+    --primary-color: #2563eb;     /* Darker blue for better contrast */
+    --secondary-color: #1e293b;   /* Darker slate for better contrast */
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #f1f5f9; /* Slightly darker for better contrast */
+    --accent-color: #15803d;      /* Darker green for better contrast */
+    --nav-active-bg: rgba(255, 255, 255, 0.2); /* For active navigation items */
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--secondary-bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30; /* Use this to ensure header stays on top of other content */
+    /* Make sure to use this to keep a consistent layout for nav toggle */
+    min-height: 60px;
+}
+.house-logo {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.header-title {
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    color: var(--primary-bg-color);
+    margin-left: 45px;
+    background-color: var(--secondary-color);
+    padding: 12px 20px;
+    border-radius: 50px 80px;
+    font-weight: 700;
+    box-shadow: var(--header-shadow);
+    transition: all var(--transition-speed) ease-in-out;
+}   
+
+/* Enhanced navigation wayfinding */
+.header-title[aria-current="page"] {
+    background-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+.navigation {
+    display: none;
+    position: fixed; /* position under the header */
+    top: 60px; /* match header height */
+    left: 0;
+    right: 0;
+    z-index: 20; /* lower than header so header/title stays on top */
+    background-color: var(--secondary-bg-color);
+    padding: 0;
+    transition: all var(--transition-speed) ease-in-out;
+    text-align: center;
+}
+
+.navigation.show {
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 1.2rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-speed) ease-in-out;
+    background-color: var(--secondary-color); /* Darker background for better contrast */
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: var(--header-shadow);
+}
+
+/* Nav link text color: control link color here (single source of truth) */
+.nav-links a {
+    color: var(--primary-bg-color);
+    text-decoration: none;
+    padding: 0.75rem;
+    display: block;
+    transition: all var(--transition-speed) ease-in-out;
+    font-weight: 700; /* Bolder text for better readability */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Subtle text shadow for enhanced contrast */
+}
+
+/* Hover / focus for nav links */
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--primary-bg-color);
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.current-page-status {
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-left: 30px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.hamburger {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    right: 20px;
+    top: 10px;
+    z-index: 40; /* Keep button above everything */
+}
+.hamburger::before {
+    content: "\2630";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    line-height: 1;
+}
+.hamburger.show::before {
+    content: "\00D7";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    line-height: 1;
+}
+.current-nav-item {
+    font-weight: 700;
+    color: var(--primary-bg-color) !important;
+    text-decoration: none;
+    background-color: var(--nav-active-bg);
+    border-radius: var(--border-radius);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Wayfinding indicator for current nav item */
+.current-nav-item::before {
+    content: '→';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-bg-color);
+    font-weight: bold;
+}
+
+/* Main content styles */
+main {
+    max-width: 767px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.student-photo-title {
+    font-family: var(--primary-font);
+    font-size: 1.8rem;
+    color: var(--primary-bg-color);
+    margin-top: 2rem;
+    text-align: center;
+    border-color:#3474d3;
+    border-style:solid;
+    border-width: 2px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+/* About me section styles */
+.profile-container {
+    width: auto; /* Reset width to respect parent container */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 2rem 1rem;
+    margin: 4rem 0 2rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.photo-frame {
+    background-color: var(--secondary-bg-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    display: inline-block;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.photo-frame:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.student-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-bg-color);
+    display: block;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.student-photo:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+}
+
+.about-me-box {
+    background-color: var(--secondary-bg-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(44, 62, 80, 0.1);
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.about-me-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Course filter section styles */
+.web-certificate-courses-box {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-filters {
+    margin: 1rem 0 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background: var(--secondary-bg-color);
+    /* Use the darker secondary color for better contrast on light background */
+    color: var(--secondary-color);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    transition: all var(--transition-speed) ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.filter-btn:hover::after,
+.filter-btn.active::after {
+    transform: scaleX(1);
+}
+
+.filter-btn:hover {
+    background: var(--primary-color);
+    color: var(--primary-bg-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: var(--primary-bg-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Credits Counter */
+#total-credits {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#total-credits div {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Course list and items */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    opacity: 1;
+    transition: opacity var(--transition-speed) ease-in-out;
+}
+
+.course-list.filtering {
+    opacity: 0;
+}
+
+.course-item {
+    padding: 1rem;
+    margin: 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background: var(--primary-bg-color);
+    transition: all var(--transition-speed) ease-in-out;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 60px;
+}
+
+.course-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.checkmark {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.course-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.course-item.completed {
+    border: 2px solid var(--accent-color);
+    background-color: rgba(39, 174, 96, 0.1);
+}
+
+.course-item h3 {
+    margin: 0 0 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.course-item h4 {
+    margin: 0 0 1rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.course-item p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.course-item p strong {
+    color: var(--secondary-color);
+}
+
+/* Technology tags */
+.course-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--secondary-bg-color);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--primary-color);
+}
+
+
+.home-footer {
+    text-align: center;
+    padding: 12px 10px;
+    /* Darker footer background with high-contrast white text for accessibility */
+    background-color: var(--secondary-color);
+    color: var(--primary-bg-color);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.home-footer a {
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    color: inherit; /* ensure links use the high-contrast footer text color */
+}
+/* Footer social icons: left-to-right and evenly spaced */
+.footer-links {
+    margin: 0 auto;
+}
+.footer-links h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+.footer-links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* center the group */
+    gap: 1.7rem; /* even spacing between icons */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+}
+.footer-links li {
+    display: inline-block;
+}
+.footer-links li img {
+    width: 60px; /* consistent icon size */
+    height: auto;
+    display: block;
+}
+
+.footer-links li img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}

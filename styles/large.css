@@ -1,0 +1,246 @@
+/* Large Styles for Desktop View (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    /* Keep the root variables consistent with small.css */
+    :root {
+        --primary-font: 'Roboto', sans-serif;
+        --secondary-font: 'Ubuntu', sans-serif;
+        --primary-color: #2563eb;     /* Darker blue for better contrast */
+        --secondary-color: #1e293b;   /* Darker slate for better contrast */
+        --primary-bg-color: #ffffff;
+        --secondary-bg-color: #f1f5f9;
+        --accent-color: #15803d;      /* Darker green for better contrast */
+        --nav-active-bg: rgba(255, 255, 255, 0.2);
+        --border-radius: 8px;
+        --transition-speed: 0.3s;
+        --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Desktop-specific styles */
+    .home-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 20px;
+        position: fixed;
+        background-color: var(--secondary-bg-color);
+        box-shadow: var(--header-shadow);
+        z-index: 1000;
+    }
+
+    /* Keep logo in its original position */
+    .house-logo {
+        position: absolute;
+        top: 35px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Keep title in its original position */
+    .header-title {
+        position: absolute;
+        left: 45px;
+        margin-left: 20px;
+    }
+
+    /* Improved navigation for desktop */
+    .navigation {
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem 2rem;
+        margin: 0;
+        border-radius: var(--border-radius);
+        background-color: var(--primary-color);
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        color: var(--primary-bg-color);
+    }
+
+    /* Main content layout for desktop */
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "status status"
+            "about photo"
+            "courses courses";
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 80px auto 0;
+    }
+
+    /* About me section takes full width at top */
+    .home-status-box {
+        grid-area: status;
+    }
+
+    /* About me box desktop adjustments */
+    .about-me-box {
+        background-color: var(--secondary-bg-color);
+        border: 1px solid rgba(44, 62, 80, 0.1);
+        grid-area: about;
+        margin: 0;
+        height: auto;
+    }
+
+    /* Create a wrapper for photo section */
+    .photo-section-wrapper {
+        grid-area: photo;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-self: start;
+        margin: 0;
+    }
+
+    /* Photo section container */
+    .student-photo-title {
+        width: 100%;
+        max-width: 400px;
+        font-size: 1.8rem;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    /* Profile section desktop adjustments */
+    .profile-container {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    /* Ensure web certificate courses box spans full width */
+    .web-certificate-courses-box {
+        grid-area: courses;
+    }
+
+    .photo-frame {
+        background-color: var(--secondary-bg-color);
+        padding: 1.5rem;
+    }
+
+    /* Ensure the web certificate courses box spans full width */
+    .web-certificate-courses-box {
+        grid-column: 1 / -1;
+    }
+
+    /* Navigation desktop color adjustments */
+    .nav-links {
+        background-color: var(--secondary-color);
+        border-bottom: none;
+        padding: 1rem 2rem;
+    }
+
+    .nav-links a {
+        color: var(--primary-bg-color);
+        font-weight: 700;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        color: var(--primary-bg-color);
+        background-color: var(--primary-color);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .current-nav-item {
+        color: var(--accent-color) !important;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Course filters desktop adjustments */
+    .filter-btn {
+        border-color: var(--primary-color);
+        /* Use darker text color for better contrast on light button background */
+        color: var(--secondary-color);
+        background-color: var(--secondary-bg-color);
+        font-weight: 700;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        background-color: var(--primary-color);
+        color: var(--primary-bg-color);
+    }
+
+    .filter-btn::after {
+        background-color: var(--primary-color);
+    }
+
+    /* Course items desktop adjustments */
+    .course-item {
+        border-color: var(--secondary-color);
+        background-color: var(--primary-bg-color);
+    }
+
+    .course-item:hover {
+        border-color: var(--primary-color);
+    }
+
+    .course-item.completed {
+        border-color: var(--accent-color);
+        background-color: rgba(39, 174, 96, 0.1);
+    }
+
+    .checkmark {
+        color: var(--accent-color);
+    }
+
+    /* Credits counter desktop adjustments */
+    #total-credits {
+        background-color: var(--primary-color);
+        color: var(--primary-bg-color);
+    }
+
+    /* Footer desktop adjustments */
+    .home-footer {
+        /* Dark footer for high contrast on desktop */
+        background-color: var(--secondary-color);
+        color: var(--primary-bg-color);
+        padding: 14px 12px;
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    .home-footer a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* Hide hamburger menu in desktop view */
+    .hamburger {
+        display: none;
+    }
+
+    /* Show navigation by default in desktop */
+    #nav-bar {
+        display: flex;
+    }
+
+    /* Adjust navigation layout for desktop */
+    .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem;
+    }
+}
