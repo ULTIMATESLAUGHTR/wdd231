@@ -13,6 +13,9 @@
         --border-radius: 8px;
         --transition-speed: 0.3s;
         --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        --elevation-1: 0 2px 4px rgba(0,0,0,0.08);
+        --elevation-2: 0 4px 8px rgba(0,0,0,0.12);
+        --elevation-3: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     /* Desktop-specific styles */
@@ -153,7 +156,7 @@
     .nav-links a {
         color: var(--primary-bg-color);
         font-weight: 700;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        text-shadow: var(--text-shadow);
     }
 
     .nav-links a:hover,
@@ -161,7 +164,7 @@
         color: var(--primary-bg-color);
         background-color: var(--primary-color);
         transform: translateY(-1px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: var(--elevation-1);
     }
 
     .current-nav-item {
