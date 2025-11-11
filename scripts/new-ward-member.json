@@ -1,0 +1,28 @@
+{
+  "family_name": "Santos",
+  "move_in_date": "2011-10-16",
+  "number_of_people": 4,
+  "visited_by_bishopric": true,
+  "family_members": [
+    {
+      "name": "Juan Fidencio Santos",
+      "gender": "Male",
+      "birthdate": "1960-06-10"
+    },
+    {
+      "name": "Juan Alberto Santos",
+      "gender": "Male",
+      "birthdate": "1991-02-21"
+    },
+    {
+      "name": "Juan Pablo Santos",
+      "gender": "Male",
+      "birthdate": "1993-06-15"
+    },
+    {
+      "name": "Alexa Santos",
+      "gender": "Female",
+      "birthdate": "2007-07-17"
+    }
+  ]
+}
