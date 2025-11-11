@@ -23,9 +23,11 @@
 </head>
 <body>
     <header class="home-header">
-        <h1 class="header-title">Directory of Current Chamber Members</h1>
-        <img class="house-logo" src="images/chamber-of-commerce-logo.jpg" alt="House Icon" width="1" height="1">
-        <!--This is the JS insert for the Hamburger Button on line 22-->
+        <div class="header-brand">
+            <img class="chamber-logo" src="images/chamber-of-commerce-logo.jpg" alt="Chamber of Commerce Logo" width="150" height="150">
+            <h1 class="header-title">Directory</h1>
+        </div>
+        <!--This is the JS insert for the Hamburger Button-->
         <button id="nav-button" class="hamburger" aria-label="navigation"></button>
     <nav id="nav-bar" class="navigation">
         <ul class ="nav-links">
@@ -56,6 +58,15 @@
     </main>
     <footer>
         <p>Chamber of Commerce for New York City</p>
+        <p>20 West 44th Street, NY, NY 10036</p>
+        <p>info@nycchamberofcommerce.com</p>
+        <p>(123) 456-7890</p>
+        <ul class="social-media-links">
+            <li><a href="https://www.youtube.com/nycchamber"><img src="images/youtube-logo.png" alt="Youtube Logo" width="24" height="24"></a></li>
+            <li><a href="https://www.twitter.com/nycchamber"><img src="images/twitter-logo.png" alt="Twitter Logo" width="24" height="24"></a></li>
+            <li><a href="https://www.linkedin.com/company/nycchamber"><img src="images/linkedin-logo.png" alt="LinkedIn Logo" width="24" height="24"></a></li>
+        </ul>
+        <p>WDD231 Class Project</p>
         <p>Aaron Islas</p>
         <p>&copy; <span id="currentyear"></span> Chamber of Commerce. All rights reserved.</p>
         <p>Last Modified: <span id="lastmodified"></span></p>

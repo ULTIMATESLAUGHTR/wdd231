@@ -1,2 +1,134 @@
 /* Large Styles for Desktop View (min-width: 768px) */
 @media screen and (min-width: 768px) {
+    /* Desktop header adjustments */
+    .home-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        position: fixed;
+        background-color: var(--secondary-bg-color);
+        box-shadow: var(--header-shadow);
+        z-index: 1000;
+        min-height: 170px;
+        gap: 1rem;
+    }
+
+    .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 0 1 auto;
+    }
+
+    /* Logo sizing for desktop */
+    .chamber-logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    /* Keep title styling for desktop */
+    .header-title {
+        font-size: 1.4rem;
+        padding: 10px 15px;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    /* Improved navigation for desktop */
+    .navigation {
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem 2rem;
+        margin: 0;
+        border-radius: var(--border-radius);
+        background-color: var(--secondary-color);
+        border-bottom: none;
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        color: var(--primary-bg-color);
+        font-weight: 700;
+        text-shadow: var(--text-shadow, 0 1px 1px rgba(0, 0, 0, 0.1));
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        color: var(--primary-bg-color);
+        background-color: var(--primary-color);
+        transform: translateY(-1px);
+        box-shadow: var(--elevation-1);
+    }
+
+    .current-nav-item {
+        color: var(--primary-bg-color) !important;
+        background-color: var(--nav-active-bg);
+    }
+
+    /* Hide hamburger menu in desktop view */
+    .hamburger {
+        display: none;
+    }
+
+    /* Show navigation by default in desktop */
+    #nav-bar {
+        display: flex;
+    }
+
+    /* Main content adjustments for desktop */
+    main {
+        margin-top: 170px;
+        padding: 2rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Directory controls desktop adjustments */
+    .directory-controls {
+        gap: 1rem;
+    }
+
+    /* Member card grid improvements for desktop */
+    #members.grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .card-media img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Member card hover effects */
+    .member-card {
+        transition: all var(--transition-speed);
+    }
+
+    .member-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--elevation-3);
+    }
+
+    /* Footer desktop adjustments */
+    footer {
+        font-size: 1.15rem;
+        padding: 16px 20px;
+    }
+}
