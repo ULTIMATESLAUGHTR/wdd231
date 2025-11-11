@@ -107,6 +107,38 @@
         justify-content: center;
         margin: 1.25rem 0;
     }
+    .directory-controls button {
+        padding: 0.85rem 1.5rem;
+        border: 2px solid var(--secondary-color, #1e293b);
+        background: var(--secondary-bg-color, #f1f5f9);
+        color: var(--secondary-color, #1e293b);
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        min-width: 140px;
+        transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+    }
+    .directory-controls button[aria-pressed="true"] {
+        background: var(--control-active-bg, #1e3a8a);
+        color: var(--primary-bg-color, #ffffff);
+        border-color: var(--control-active-bg, #1e3a8a);
+    }
+    .directory-controls button:hover,
+    .directory-controls button:focus-visible {
+        background: var(--control-hover-bg, #1d4ed8);
+        color: var(--primary-bg-color, #ffffff);
+        transform: translateY(-2px);
+    }
+    .directory-controls button[aria-pressed="true"]:hover,
+    .directory-controls button[aria-pressed="true"]:focus-visible {
+        background: var(--control-active-bg, #1e3a8a);
+        filter: brightness(1.05);
+    }
+    .directory-controls button:active {
+        transform: translateY(0);
+    }
 
     /* Member card grid improvements for desktop */
     #members.grid {
