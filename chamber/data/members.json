@@ -5,47 +5,47 @@
             "address": "123 Main St, New York, NY 10001",
             "phone": "(212) 555-1234",
             "website": "https://www.truebluesolutions.example.com",
-            "image": "true-blue-logo.png",
+            "image": "images/true-blue-logo.svg",
             "membershipLevel": 1
         },
         {
-            "name": "Green Harbor Studios",
+            "name": "Green Harbor LLC",
             "address": "45 Harbor Ave, Portland, ME 04101",
             "phone": "(207) 555-9876",
             "website": "https://www.greenharbor.example.com",
-            "image": "green-harbor.png",
+            "image": "images/green-harbor.jpg",
             "membershipLevel": 3
         },
         {
-            "name": "Summit Tech Co.",
+            "name": "Summit Technology",
             "address": "890 Summit Blvd, Denver, CO 80202",
             "phone": "(303) 555-2468",
             "website": "https://www.summittechnology.example.com",
-            "image": "summit-tech.png",
+            "image": "images/summit-logo.jpg",
             "membershipLevel": 2
         },
         {
-            "name": "Red Oak Marketing",
+            "name": "Red Oak Business Group",
             "address": "210 Oak St, Austin, TX 78701",
             "phone": "(512) 555-3344",
-            "website": "https://www.redoakmarketing.example.com",
-            "image": "red-oak.png",
+            "website": "https://www.redoakbusinessgroup.example.com",
+            "image": "images/red-oak-business-logo.jpg",
             "membershipLevel": 2
         },
         {
-            "name": "Cobalt Financial",
+            "name": "Cabot Financial",
             "address": "16 Finance Pkwy, San Francisco, CA 94105",
             "phone": "(415) 555-7788",
-            "website": "https://www.cobaltfinancial.example.com",
-            "image": "cobalt-financial.png",
+            "website": "https://www.cabotfinancial.example.com",
+            "image": "images/cabot-financial-logo.png",
             "membershipLevel": 3
         },
         {
-            "name": "BrightWave Education",
+            "name": "BrightWave Group",
             "address": "77 College Ave, Boston, MA 02115",
             "phone": "(617) 555-1122",
             "website": "https://www.brightwave-edu.example.com",
-            "image": "brightwave.png",
+            "image": "images/brightwave-group-logo.jpg",
             "membershipLevel": 1
         },
         {
@@ -53,7 +53,7 @@
             "address": "402 Logistics Dr, Columbus, OH 43215",
             "phone": "(614) 555-6600",
             "website": "https://www.orbitlogistics.example.com",
-            "image": "orbit-logistics.png",
+            "image": "images/orbit-logistics-logo.jpg",
             "membershipLevel": 2
         }
     ]
