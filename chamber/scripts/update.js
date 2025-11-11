@@ -1,16 +1,24 @@
 //Use this for updating the footer with current year and last modified date
-function currentyear() {
-    const currentYear = new Date().getFullYear();
-    document.getElementById("currentyear").textContent = currentYear;
-    return currentYear;
+// Update footer with current year and last modified timestamp
+function updateCurrentYear() {
+    const yearEl = document.getElementById('currentyear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 }
 
-function lastModified() {
-    const lastModified = new Date(document.lastModified);
-    document.getElementById('lastModified').textContent = `${lastModified}`;
+function updateLastModified() {
+    const modEl = document.getElementById('lastmodified');
+    if (modEl) {
+        // document.lastModified returns a string; convert then format
+        const lastModDate = new Date(document.lastModified);
+        const formatted = `${lastModDate.toLocaleDateString()} ${lastModDate.toLocaleTimeString()}`;
+        modEl.textContent = formatted;
+    }
 }
 
-console.log('This file was last modified on: ${lastModified()}');
-
-currentyear();
-lastModified();
+document.addEventListener('DOMContentLoaded', () => {
+    updateCurrentYear();
+    updateLastModified();
+    console.log(`Footer timestamps updated: year=${new Date().getFullYear()}, lastModified=${document.lastModified}`);
+});

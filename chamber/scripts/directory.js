@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const res = await fetch('data/members.json');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const json = await res.json();
-      return json.members || [];
+      // Support either key name
+      const list = json.chamber_members || json.members || [];
+      return Array.isArray(list) ? list : [];
     } catch (err) {
       console.error('Failed to load members:', err);
       return [];
@@ -20,16 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function createMemberCard(m) {
     const card = document.createElement('article');
     card.className = `member-card membership-${m.membershipLevel}`;
+    // Resolve image path robustly
+    const imgPath = m.image && m.image.startsWith('images/') ? m.image : `images/${m.image}`;
+    const levelLabel = m.membershipLevel === 3 ? 'Gold' : m.membershipLevel === 2 ? 'Silver' : 'Member';
     card.innerHTML = `
       <div class="card-media">
-        <img src="images/${m.image}" alt="${m.name} logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/200x200?text=No+Image'">
+        <img src="${imgPath}" alt="${m.name} logo" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://via.placeholder.com/200x200?text=No+Image'">
       </div>
       <div class="card-body">
         <h3 class="company-name"><a href="${m.website}" target="_blank" rel="noopener">${m.name}</a></h3>
         <p class="company-address">${m.address}</p>
         <p class="company-phone">${m.phone}</p>
       </div>
-      <div class="card-badge">${m.membershipLevel === 3 ? 'Gold' : m.membershipLevel === 2 ? 'Silver' : 'Member'}</div>
+      <div class="card-badge" aria-label="Membership level ${levelLabel}">${levelLabel}</div>
     `;
     return card;
   }

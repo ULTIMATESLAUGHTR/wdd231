@@ -178,9 +178,9 @@ main {
 /* Directory page styles: grid and list toggle */
 .directory-controls {
   display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  margin: 1rem 0;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1.25rem 0;
 }
 .directory-controls button {
   padding: 0.5rem 0.75rem;
@@ -199,7 +199,7 @@ main {
 #members.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 #members.list {
   display: block;
@@ -226,9 +226,11 @@ main {
 .card-media img {
   width: 100px;
   height: 100px;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: var(--primary-bg-color, #ffffff);
   border-radius: 8px;
   border: 2px solid var(--secondary-bg-color, #f1f5f9);
+  padding: 4px;
 }
 
 .card-body {
@@ -303,4 +305,101 @@ footer a {
 footer a:hover,
 footer a:focus {
   text-decoration: underline;
+}
+
+/* Left-align address and footer info blocks while footer remains centered */
+.chamber-address-info,
+.footer-info {
+  text-align: left;
+  margin: 0.25rem auto; /* center the block, left-align its text */
+  display: block;
+}
+
+/* Footer social icons: left-to-right and evenly spaced (mirrors course-home-page) */
+.footer-links {
+  margin: 0 auto;
+}
+.footer-links h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+}
+.footer-links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.7rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+}
+.footer-links li {
+  display: inline-block;
+}
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  text-decoration: none !important;
+}
+.footer-links li img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+.footer-links a:hover,
+.footer-links a:focus {
+  text-decoration: none;
+}
+.footer-links li img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+/* Social media links in footer: no bullets, centered, 50x50 tap targets */
+.social-media-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+.social-media-links li {
+  display: inline-block;
+}
+.social-media-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  text-decoration: none !important;
+  transition: transform 0.2s ease;
+}
+.social-media-links a:hover,
+.social-media-links a:focus {
+  transform: scale(1.1);
+  text-decoration: none;
+}
+.social-media-links img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Make only the LinkedIn image slightly wider while keeping height */
+.social-media-links a[href*="linkedin.com"] {
+  width: 60px; /* expand tap area horizontally to fit the wider icon */
+}
+.social-media-links img[alt="LinkedIn Logo"] {
+  width: 60px;
+  height: 50px;
+  object-fit: fill; /* allow slight horizontal stretch for readability */
 }
