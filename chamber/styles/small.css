@@ -294,6 +294,12 @@ footer {
   font-weight: 700;
   line-height: 1.4;
 }
+/* Reserve space for dynamic spans to prevent CLS */
+#currentyear,
+#lastmodified {
+  display: inline-block;
+  min-width: 10ch; /* reserve width for typical content */
+}
 footer p {
   margin: 0.25rem 0;
 }

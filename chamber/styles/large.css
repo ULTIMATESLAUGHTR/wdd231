@@ -139,6 +139,31 @@
         padding: 16px 20px;
     }
 
+    /* Enlarge social media links on desktop */
+    .social-media-links {
+        gap: 2rem;
+    }
+    .social-media-links a {
+        width: 150px;
+        height: 150px;
+    }
+    .social-media-links img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+    /* Ensure LinkedIn variants match desktop size explicitly (override mobile-specific tweaks) */
+    .social-media-links a[href*="linkedin.com"] {
+        width: 150px;
+        height: 150px;
+    }
+    .social-media-links img[alt="LinkedIn Logo"],
+    .social-media-links img[src*="linked-in-logo-2"] {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+
     /* Left-align address and footer info blocks on desktop as well */
     .chamber-address-info,
     .footer-info {
