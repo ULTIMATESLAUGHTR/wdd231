@@ -1,0 +1,121 @@
+/*This is for the Small CSS File Mobile View*/
+:root {
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Ubuntu', sans-serif;
+    --primary-color: #3b82f6;     /* Blue */
+    --secondary-color: #334155;   /* Slate */
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #f1f5f9;
+    --accent-color: #22c55e;      /* Green */
+    --nav-active-bg: rgba(255, 255, 255, 0.2);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --elevation-1: 0 2px 4px rgba(0,0,0,0.08);
+    --elevation-2: 0 4px 8px rgba(0,0,0,0.12);
+    --elevation-3: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Directory page styles: grid and list toggle */
+.directory-controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+.directory-controls button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--secondary-color, #1e293b);
+  background: var(--secondary-bg-color, #f1f5f9);
+  color: var(--secondary-color, #1e293b);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.directory-controls button[aria-pressed="true"] {
+  background: var(--primary-color, #2563eb);
+  color: var(--primary-bg-color, #ffffff);
+}
+
+#members.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+#members.list {
+  display: block;
+}
+
+.member-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: var(--primary-bg-color, #fff);
+  align-items: center;
+  box-shadow: var(--elevation-1, 0 2px 4px rgba(0,0,0,0.08));
+}
+
+/* In list view member cards should span full width and stack content */
+#members.list .member-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.card-media img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--secondary-bg-color, #f1f5f9);
+}
+
+.card-body {
+  flex: 1;
+}
+.company-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+.company-name a {
+  color: var(--secondary-color, #1e293b);
+  text-decoration: none;
+}
+.company-address,
+.company-phone {
+  margin: 0.15rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.card-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* membership level styles */
+.member-card.membership-3 .card-badge { /* gold */
+  background: linear-gradient(90deg, #ffdf7e, #ffd24d);
+  color: #3a2b00;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.member-card.membership-2 .card-badge { /* silver */
+  background: linear-gradient(90deg, #e6eef7, #c9dff7);
+  color: #1e293b;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.member-card.membership-1 .card-badge { /* member */
+  background: var(--secondary-bg-color, #f1f5f9);
+  color: var(--secondary-color, #1e293b);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .card-media img { width: 80px; height: 80px; }
+  .company-name { font-size: 1rem; }
+}

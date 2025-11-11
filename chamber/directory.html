@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts/starting-index.js" defer></script>
+    <script src="scripts/update.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/hamburger-nav-menu.js" defer></script>
     <meta name="author"content="Aaron Islas">
     <meta name="description"content="This is the Homepage for Directory assignment of week 2.">
     <meta property="og:title" content="Chamber Directory Page">
@@ -17,9 +19,41 @@
     <link rel="preconnect"href="https://fonts.googleapis.com">
     <link rel="preconnect"href="https://fonts.gstatic.com"crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    <title>Course Home Website</title>
+    <title>Chamber Directory Website</title>
 </head>
 <body>
-    
+    <header class="home-header">
+        <h1 class="header-title">Directory</h1>
+        <img class="house-logo" src="images/chamber-of-commerce-logo.jpg" alt="House Icon" width="1" height="1">
+        <!--This is the JS insert for the Hamburger Button on line 22-->
+        <button id="nav-button" class="hamburger" aria-label="navigation"></button>
+    <nav id="nav-bar" class="navigation">
+        <ul class ="nav-links">
+            <li class="nav-list"><a href="index.html">Home</a></li>
+            <li class="nav-list"><a href="discover.html">Discover</a></li>
+            <li class="nav-list"><a href="directory.html">Directory</a></li>
+            <li class="nav-list"><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main class="chamber-directory">
+        <header class="directory-header">
+            <h1>Chamber Directory</h1>
+            <div class="directory-controls" role="toolbar" aria-label="View controls">
+                <button id="gridBtn" aria-pressed="true">Grid</button>
+                <button id="listBtn" aria-pressed="false">List</button>
+            </div>
+        </header>
+
+        <section id="members" class="members" aria-live="polite">
+            <!-- Member cards will be injected here by scripts/directory.js -->
+        </section>
+    </main>
+    <footer>
+        <p>Chamber of Commerce for New York City</p>
+        <p>Aaron Islas</p>
+        <p>&copy; <span id="currentyear"></span> Chamber of Commerce. All rights reserved.</p>
+        <p>Last Modified: <span id="lastmodified"></span></p>
+    </footer>
 </body>
 </html>

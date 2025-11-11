@@ -1,0 +1,60 @@
+{
+    "chamber_members": [
+        {
+            "name": "True Blue Solutions",
+            "address": "123 Main St, New York, NY 10001",
+            "phone": "(212) 555-1234",
+            "website": "https://www.truebluesolutions.example.com",
+            "image": "true-blue-logo.png",
+            "membershipLevel": 1
+        },
+        {
+            "name": "Green Harbor Studios",
+            "address": "45 Harbor Ave, Portland, ME 04101",
+            "phone": "(207) 555-9876",
+            "website": "https://www.greenharbor.example.com",
+            "image": "green-harbor.png",
+            "membershipLevel": 3
+        },
+        {
+            "name": "Summit Tech Co.",
+            "address": "890 Summit Blvd, Denver, CO 80202",
+            "phone": "(303) 555-2468",
+            "website": "https://www.summittechnology.example.com",
+            "image": "summit-tech.png",
+            "membershipLevel": 2
+        },
+        {
+            "name": "Red Oak Marketing",
+            "address": "210 Oak St, Austin, TX 78701",
+            "phone": "(512) 555-3344",
+            "website": "https://www.redoakmarketing.example.com",
+            "image": "red-oak.png",
+            "membershipLevel": 2
+        },
+        {
+            "name": "Cobalt Financial",
+            "address": "16 Finance Pkwy, San Francisco, CA 94105",
+            "phone": "(415) 555-7788",
+            "website": "https://www.cobaltfinancial.example.com",
+            "image": "cobalt-financial.png",
+            "membershipLevel": 3
+        },
+        {
+            "name": "BrightWave Education",
+            "address": "77 College Ave, Boston, MA 02115",
+            "phone": "(617) 555-1122",
+            "website": "https://www.brightwave-edu.example.com",
+            "image": "brightwave.png",
+            "membershipLevel": 1
+        },
+        {
+            "name": "Orbit Logistics",
+            "address": "402 Logistics Dr, Columbus, OH 43215",
+            "phone": "(614) 555-6600",
+            "website": "https://www.orbitlogistics.example.com",
+            "image": "orbit-logistics.png",
+            "membershipLevel": 2
+        }
+    ]
+}
