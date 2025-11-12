@@ -146,6 +146,11 @@
         gap: 1.5rem;
     }
 
+    /* Hide media in list view (desktop too) */
+    #members.list .card-media {
+        display: none !important;
+    }
+
     .card-media img {
         width: 150px;
         height: 150px;
@@ -169,7 +174,7 @@
     footer {
         font-size: 1.15rem;
         padding: 16px 20px;
-        min-height: 220px; /* match mobile min-height for smooth transition */
+        min-height: 220px; /* revert to previous stable value */
     }
 
     /* Enlarge social media links on desktop */
@@ -177,23 +182,23 @@
         gap: 2rem;
     }
     .social-media-links a {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
     .social-media-links img {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         object-fit: contain;
     }
     /* Ensure LinkedIn variants match desktop size explicitly (override mobile-specific tweaks) */
     .social-media-links a[href*="linkedin.com"] {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
     .social-media-links img[alt="LinkedIn Logo"],
     .social-media-links img[src*="linked-in-logo-2"] {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         object-fit: contain;
     }
 

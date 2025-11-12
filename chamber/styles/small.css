@@ -244,6 +244,11 @@ main {
   width: 100%;
 }
 
+/* Hide media in list view (show all text info) */
+#members.list .card-media {
+  display: none !important;
+}
+
 .card-media img {
   width: 100px;
   height: 100px;
@@ -314,13 +319,14 @@ footer {
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.4;
-  min-height: 220px; /* reserve space to match desktop and prevent shift */
+  min-height: 220px; /* revert to prior stable value */
 }
 /* Reserve space for dynamic spans to prevent CLS */
 #currentyear,
 #lastmodified {
   display: inline-block;
   min-width: 10ch; /* reserve width for typical content */
+  min-height: 1.2em; /* reserve height for stability */
 }
 footer p {
   margin: 0.25rem 0;
@@ -341,6 +347,7 @@ footer a:focus {
   text-align: left;
   margin: 0.25rem auto; /* center the block, left-align its text */
   display: block;
+  /* removed min-height addition to revert previous change */
 }
 
 /* Footer social icons: left-to-right and evenly spaced (mirrors course-home-page) */
@@ -368,13 +375,13 @@ footer a:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   text-decoration: none !important;
 }
 .footer-links li img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   display: block;
 }
@@ -389,6 +396,8 @@ footer a:focus {
 
 /* Social media links in footer: no bullets, centered, 50x50 tap targets */
 .social-media-links {
+  min-height: 100px; /* reserve space for icons, prevents shift */
+  min-height: 1.5em; /* reserve space for each info block to prevent collapse */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -405,29 +414,21 @@ footer a:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  text-decoration: none !important;
+  width: 100px;
+  height: 100px;
   transition: transform 0.2s ease;
+}
+
+.social-media-links li img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
 }
 .social-media-links a:hover,
 .social-media-links a:focus {
   transform: scale(1.1);
   text-decoration: none;
 }
-.social-media-links img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  display: block;
-}
 
-/* Make only the LinkedIn image slightly wider while keeping height */
-.social-media-links a[href*="linkedin.com"] {
-  width: 60px; /* expand tap area horizontally to fit the wider icon */
-}
-.social-media-links img[alt="LinkedIn Logo"] {
-  width: 60px;
-  height: 50px;
-  object-fit: fill; /* allow slight horizontal stretch for readability */
-}
+/* cleanup: remove malformed nested blocks introduced earlier */

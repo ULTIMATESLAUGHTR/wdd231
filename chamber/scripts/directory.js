@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createMemberCard(m) {
     const card = document.createElement('article');
     card.className = `member-card membership-${m.membershipLevel}`;
-    // Resolve image path robustly
+    // Resolves the image path robustly
     const imgPath = m.image && m.image.startsWith('images/') ? m.image : `images/${m.image}`;
     const levelLabel = m.membershipLevel === 3 ? 'Gold' : m.membershipLevel === 2 ? 'Silver' : 'Member';
     card.innerHTML = `
@@ -56,12 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     membersEl.classList.remove('list');
     gridBtn.setAttribute('aria-pressed', 'true');
     listBtn.setAttribute('aria-pressed', 'false');
+    // Reveal media to assistive tech in grid view
+    membersEl.querySelectorAll('.card-media').forEach(el => el.removeAttribute('aria-hidden'));
   }
   function setList() {
     membersEl.classList.add('list');
     membersEl.classList.remove('grid');
     gridBtn.setAttribute('aria-pressed', 'false');
     listBtn.setAttribute('aria-pressed', 'true');
+    // Hide media from assistive tech in list view (CSS hides visually)
+    membersEl.querySelectorAll('.card-media').forEach(el => el.setAttribute('aria-hidden', 'true'));
   }
 
   gridBtn.addEventListener('click', setGrid);
