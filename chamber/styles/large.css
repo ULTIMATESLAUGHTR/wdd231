@@ -169,6 +169,7 @@
     footer {
         font-size: 1.15rem;
         padding: 16px 20px;
+        min-height: 220px; /* match mobile min-height for smooth transition */
     }
 
     /* Enlarge social media links on desktop */

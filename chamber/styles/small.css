@@ -314,6 +314,7 @@ footer {
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.4;
+  min-height: 220px; /* reserve space to match desktop and prevent shift */
 }
 /* Reserve space for dynamic spans to prevent CLS */
 #currentyear,
