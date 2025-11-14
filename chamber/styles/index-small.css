@@ -5,6 +5,7 @@
     --secondary-color: #334155;   /* Slate */
     --primary-bg-color: #ffffff;
     --secondary-bg-color: #f1f5f9;
+    --weather-background-color: rgb(63, 163, 230, 0.65);
     --accent-color: #22c55e;      /* Green */
     --nav-active-bg: rgba(255, 255, 255, 0.2);
     --border-radius: 8px;
@@ -178,9 +179,85 @@ main {
     padding: 1rem;
 }
 
+/* Welcome Section with Hero Image */
+.welcome-section {
+  background: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--elevation-2);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.welcome-section h2 {
+  color: var(--secondary-color);
+  margin: 0 0 1rem 0;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.welcome-section {
+  position: relative;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  min-height: 250px;
+  max-height: 350px;
+}
+
+.call-to-action {
+  position: absolute;
+  top: 30%;
+  left: 13%;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--elevation-2);
+  max-width: 300px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--secondary-color);
+  margin: 0;
+  z-index: 3;
+  font-weight: 700;
+}
+
+.join-button {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--control-active-bg);
+  color: var(--primary-bg-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem; /* 18px to qualify as large text for AA */
+  font-weight: 700;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  box-shadow: var(--elevation-2);
+  transition: all var(--transition-speed);
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.join-button:hover,
+.join-button:focus {
+  background: var(--control-active-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-3);
+}
+
 /* Weather Section Card Styles */
 .weather-section {
-  background: var(--primary-bg-color);
+  background: var(--weather-background-color);
   border-radius: var(--border-radius);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -211,7 +288,7 @@ main {
 
 .weather-section #current-temp {
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--control-active-bg);
   font-size: 1.3rem;
 }
 
@@ -232,7 +309,7 @@ main {
 
 .weather-section figcaption {
   font-size: 1rem;
-  color: #555;
+  color: var(--secondary-color);
   font-style: italic;
   text-transform: capitalize;
 }
@@ -268,7 +345,7 @@ main {
 }
 
 .forecast-day {
-  background: var(--secondary-bg-color);
+  background: var(--weather-background-color);
   border-radius: var(--border-radius);
   padding: 1rem;
   display: flex;
@@ -305,6 +382,37 @@ main {
 
 #forecast-temp {
   display: none;
+}
+
+/* Current Events Section Styles */
+.current-events {
+  background: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--elevation-2);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.current-events:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-3);
+}
+
+.current-events h2 {
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.current-events p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.5rem 0;
 }
 
 footer {

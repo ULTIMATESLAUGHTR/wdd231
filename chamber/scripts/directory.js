@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const listBtn = document.getElementById('listBtn');
   const membersEl = document.getElementById('members');
 
+  // If directory controls aren't present on this page, exit safely
+  if (!gridBtn || !listBtn || !membersEl) {
+    return;
+  }
+
   async function fetchMembers() {
     try {
       const res = await fetch('data/members.json');

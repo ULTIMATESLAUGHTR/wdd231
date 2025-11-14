@@ -101,6 +101,41 @@
         margin-right: auto;
     }
 
+    /* Welcome Section Desktop Enhancements */
+    .welcome-section {
+        padding: 2rem;
+    }
+
+    .welcome-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-image {
+        min-height: 350px;
+        max-height: 500px;
+    }
+
+    .call-to-action {
+        top: 30%;
+        left: 13%;
+        max-width: 420px;
+        padding: 1.25rem 1.5rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    .join-button {
+        bottom: 3rem;
+        right: 3rem;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .join-button:hover {
+        transform: translateY(-3px) scale(1.05);
+    }
+
     /* Directory controls desktop adjustments */
     .directory-controls {
         gap: 1rem;
@@ -279,6 +314,7 @@
     }
 
     .forecast-day {
+        background: var(--weather-background-color);
         flex-direction: column;
         text-align: center;
         padding: 1.5rem;
@@ -302,5 +338,19 @@
         transform: translateY(-4px);
         box-shadow: var(--elevation-2);
         transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+
+    /* Current Events Section Desktop Layout */
+    .current-events {
+        padding: 2rem;
+    }
+
+    .current-events h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .current-events p {
+        font-size: 1.2rem;
     }
 }
