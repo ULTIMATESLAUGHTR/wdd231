@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/update.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/hamburger-nav-menu.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlight.js" defer></script>
+    <meta name="author" content="Aaron Islas">
+    <meta name="description" content="This is the Homepage for the NYC Chamber of Commerce assignment of week 3.">
+    <meta property="og:title" content="NYC Chamber of Commerce Home Page">
+    <meta property="og:description" content="This is the main landing page for a Chamber of Commerce for the city of New York. It will be used to join the org, display the weather, spotlight some members of the chamber at the bottom.">
+    <meta property="og:site_name" content="NYC Chamber of Commerce Landing Page">
+    <meta property="og:image" content="https://tinyurl.com/meta-og-image">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://ultimateslaughtr.github.io/wdd231/chamber/index.html">
+    <link rel="icon" href="images/chamber-of-commerce-icon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/index-small.css">
+    <link rel="stylesheet" href="styles/index-large.css" media="(min-width: 768px)">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <title>NY Chamber of Commerce</title>
+</head>
+<body>
+    <header class="home-header">
+        <div class="header-brand">
+            <img class="chamber-logo" src="images/chamber-of-commerce-logo.jpg" alt="Chamber of Commerce Logo" width="150" height="150">
+            <h1 class="header-title">Chamber Home</h1>
+        </div>
+        <!--This is the JS insert for the Hamburger Button-->
+        <button id="nav-button" class="hamburger" aria-label="navigation"></button>
+    <nav id="nav-bar" class="navigation">
+        <ul class="nav-links">
+            <li class="nav-list"><a href="index.html">Home</a></li>
+            <li class="nav-list"><a href="discover.html">Discover</a></li>
+            <li class="nav-list"><a href="directory.html">Directory</a></li>
+            <li class="nav-list"><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main class="chamber-homepage">
+        <section class="welcome-section">
+            <h2>Welcome to the NYC Chamber of Commerce!</h2>
+            <img src="images/nyc-hero.png" alt="NYC Skyline" class="hero-image">
+            <button class="join-button" onclick="location.href='join.html'">Join Now</button>
+            <p>Your gateway to business success in New York City. Join us to connect, grow, and thrive in one of the world's most dynamic business environments.</p>
+        </section>
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <p>Stay tuned for upcoming events and activities in the Chamber.</p>
+        </section>
+        <section class="weather-section">
+            <h2>Current Weather in New York City</h2>
+            <p>The current temperature is <span id="current-temp"></span></p>
+            <figure>
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <figcaption id="weather-description"></figcaption>
+            </figure>
+        </section>
+        <section class="forecast-section">
+            <h2>3-Day Weather Forecast</h2>
+            <div id="forecast-list" class="forecast-list"></div>
+            <span id="forecast-temp"></span>
+        </section>
+        <section class="spotlight-section">
+            <h2>Chamber Member Spotlights</h2>
+            <div id="spotlight-cards" class="spotlight-cards">
+                <!-- Spotlight member cards will be injected here by scripts/update.js -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p class="chamber-address-info">Chamber of Commerce for New York City</p>
+        <p class="chamber-address-info">20 West 44th Street, NY, NY 10036</p>
+        <p class="chamber-address-info">info@nycchamberofcommerce.com</p>
+        <p class="chamber-address-info">(123) 456-7890</p>
+        <ul class="social-media-links">
+            <li><a href="https://www.youtube.com/nycchamber"><img src="images/youtube-logo.png" alt="Youtube Logo" width="100" height="100"></a></li>
+            <li><a href="https://www.twitter.com/nycchamber"><img src="images/twitter-logo.svg" alt="Twitter Logo" width="100" height="100"></a></li>
+            <li><a href="https://www.linkedin.com/company/nycchamber"><img src="images/linked-in-logo-2.png" alt="LinkedIn Logo" width="100" height="100"></a></li>
+        </ul>
+        <p class="footer-info">WDD231 Class Project</p>
+        <p class="footer-info">Aaron Islas</p>
+        <p class="footer-info">&copy;<span id="currentyear"></span>Chamber of Commerce. All rights reserved.</p>
+        <p class="footer-info">Last Modified: <span id="lastmodified"></span></p>
+    </footer>    
+</body>
+</html>

@@ -1,4 +1,3 @@
-/*This is for the Small CSS File Mobile View*/
 :root {
     --primary-font: 'Roboto', sans-serif;
     --secondary-font: 'Ubuntu', sans-serif;
@@ -17,6 +16,8 @@
   --control-active-bg: #1e3a8a;
   --control-hover-bg: #1d4ed8;
 }
+
+/* Navigation and Header Styles */
 
 /* Navigation and Header Styles */
 .home-header {
@@ -177,137 +178,135 @@ main {
     padding: 1rem;
 }
 
-/* Directory page styles: grid and list toggle */
-.directory-controls {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  margin: 1.25rem 0;
+/* Weather Section Card Styles */
+.weather-section {
+  background: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--elevation-2);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
-.directory-controls button {
-  padding: 0.75rem 1.25rem;
-  border: 2px solid var(--secondary-color, #1e293b);
-  background: var(--secondary-bg-color, #f1f5f9);
-  color: var(--secondary-color, #1e293b);
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1.05rem; /* ~16.8px */
-  line-height: 1.2;
-  min-width: 120px;
-  transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
-}
-.directory-controls button[aria-pressed="true"] {
-  background: var(--control-active-bg);
-  color: var(--primary-bg-color);
-  border-color: var(--control-active-bg);
-}
-.directory-controls button:hover,
-.directory-controls button:focus-visible {
-  background: var(--control-hover-bg);
-  color: var(--primary-bg-color);
+
+.weather-section:hover {
   transform: translateY(-2px);
-}
-.directory-controls button[aria-pressed="true"]:hover,
-.directory-controls button[aria-pressed="true"]:focus-visible {
-  background: var(--control-active-bg);
-  filter: brightness(1.05);
-}
-.directory-controls button:active {
-  transform: translateY(0);
+  box-shadow: var(--elevation-3);
 }
 
-#members.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-}
-#members.list {
-  display: block;
+.weather-section h2 {
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
-.member-card {
+.weather-section p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.weather-section #current-temp {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.weather-section figure {
+  margin: 1rem 0 0 0;
+  text-align: center;
   display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.06);
-  background: var(--primary-bg-color, #fff);
+  flex-direction: column;
   align-items: center;
-  box-shadow: var(--elevation-1, 0 2px 4px rgba(0,0,0,0.08));
+  gap: 0.5rem;
 }
 
-/* In list view member cards should span full width and stack content */
-#members.list .member-card {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-/* Hide media in list view (show all text info) */
-#members.list .card-media {
-  display: none !important;
-}
-
-.card-media img {
+.weather-section #weather-icon {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  background-color: var(--primary-bg-color, #ffffff);
-  border-radius: 8px;
-  border: 2px solid var(--secondary-bg-color, #f1f5f9);
-  padding: 4px;
 }
 
-.card-body {
+.weather-section figcaption {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+/* Forecast Section Card Styles */
+.forecast-section {
+  background: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--elevation-2);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.forecast-section:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-3);
+}
+
+.forecast-section h2 {
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.forecast-day {
+  background: var(--secondary-bg-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.forecast-day h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--secondary-color);
   flex: 1;
 }
-.company-name {
-  margin: 0 0 0.25rem 0;
+
+.forecast-day img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.forecast-day p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.forecast-temp {
+  font-weight: 700;
+  color: var(--primary-color);
   font-size: 1.1rem;
 }
-.company-name a {
-  color: var(--secondary-color, #1e293b);
-  text-decoration: none;
-}
-.company-address,
-.company-phone {
-  margin: 0.15rem 0;
-  color: #555;
-  font-size: 0.95rem;
+
+#forecast-temp {
+  display: none;
 }
 
-.card-badge {
-  padding: 0.25rem 0.5rem;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-/* membership level styles */
-.member-card.membership-3 .card-badge { /* gold */
-  background: linear-gradient(90deg, #ffdf7e, #ffd24d);
-  color: #3a2b00;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-.member-card.membership-2 .card-badge { /* silver */
-  background: linear-gradient(90deg, #e6eef7, #c9dff7);
-  color: #1e293b;
-  border: 1px solid rgba(0,0,0,0.04);
-}
-.member-card.membership-1 .card-badge { /* member */
-  background: var(--secondary-bg-color, #f1f5f9);
-  color: var(--secondary-color, #1e293b);
-  border: 1px solid rgba(0,0,0,0.04);
-}
-
-/* Responsive tweaks */
-@media (max-width: 480px) {
-  .card-media img { width: 80px; height: 80px; }
-  .company-name { font-size: 1rem; }
-}
-
-/* Footer styles (mirroring course-home-page footer for consistency) */
 footer {
   text-align: center;
   padding: 12px 10px;
@@ -429,4 +428,123 @@ footer a:focus {
 .social-media-links a:focus {
   transform: scale(1.1);
   text-decoration: none;
+}
+
+/* Spotlight Section Styles */
+.spotlight-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--secondary-bg-color);
+  border-radius: var(--border-radius);
+}
+
+.spotlight-section h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.spotlight-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.spotlight-card {
+  background: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  box-shadow: var(--elevation-2);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.spotlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--elevation-3);
+}
+
+.spotlight-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--secondary-bg-color);
+}
+
+.spotlight-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-bg-color);
+  padding: 0.5rem;
+}
+
+.spotlight-name {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  flex: 1;
+}
+
+.spotlight-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.spotlight-body p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.spotlight-membership {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+  border-radius: 999px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.spotlight-card[data-membership="3"] .spotlight-membership {
+  background: linear-gradient(90deg, #ffdf7e, #ffd24d);
+  color: #3a2b00;
+}
+
+.spotlight-card[data-membership="2"] .spotlight-membership {
+  background: linear-gradient(90deg, #e6eef7, #c9dff7);
+  color: #1e293b;
+}
+
+.spotlight-phone,
+.spotlight-address {
+  font-size: 0.95rem;
+}
+
+.spotlight-website a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-speed);
+}
+
+.spotlight-website a:hover,
+.spotlight-website a:focus {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.no-spotlight {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
 }
