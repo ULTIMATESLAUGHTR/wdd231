@@ -181,6 +181,7 @@ main {
 
 /* Welcome Section with Hero Image */
 .welcome-section {
+  position: relative;
   background: var(--primary-bg-color);
   border-radius: var(--border-radius);
   padding: 1.5rem;
@@ -194,10 +195,6 @@ main {
   margin: 0 0 1rem 0;
   font-size: 1.6rem;
   text-align: center;
-}
-
-.welcome-section {
-  position: relative;
 }
 
 .hero-image {

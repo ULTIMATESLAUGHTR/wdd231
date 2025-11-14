@@ -26,4 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCurrentYear();
     updateLastModified();
     console.log(`Footer timestamps updated: year=${new Date().getFullYear()}, lastModified=${document.lastModified}`);
+    
+    // Join button navigation
+    const joinBtn = document.querySelector('.join-button');
+    if (joinBtn) {
+        joinBtn.addEventListener('click', () => {
+            window.location.href = 'join.html';
+        });
+    }
 });
