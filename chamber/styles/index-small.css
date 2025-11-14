@@ -501,7 +501,6 @@ footer a:focus {
 /* Social media links in footer: no bullets, centered, 50x50 tap targets */
 .social-media-links {
   min-height: 100px; /* reserve space for icons, prevents shift */
-  min-height: 1.5em; /* reserve space for each info block to prevent collapse */
   display: flex;
   flex-direction: row;
   justify-content: center;
