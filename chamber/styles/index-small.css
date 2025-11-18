@@ -119,17 +119,17 @@
     box-shadow: var(--elevation-1);
 }
 
-.current-nav-item {
+.nav-links a.current-nav-item {
     font-weight: 700;
     color: var(--primary-bg-color) !important;
-    text-decoration: underline;
+    text-decoration: underline !important;
     background-color: var(--nav-active-bg);
     border-radius: var(--border-radius);
     position: relative;
     padding-left: 1.5rem;
 }
 
-.current-nav-item::before {
+.nav-links a.current-nav-item::before {
     content: '→';
     position: absolute;
     left: 0.5rem;

@@ -77,10 +77,14 @@
         box-shadow: var(--elevation-1);
     }
 
-    .current-nav-item {
+    .nav-links a.current-nav-item {
         color: var(--primary-bg-color) !important;
         background-color: var(--nav-active-bg);
-        text-decoration: underline;
+        text-decoration: underline !important;
+    }
+
+    .nav-links a.current-nav-item::before {
+        display: none;
     }
 
     /* Hide hamburger menu in desktop view */
