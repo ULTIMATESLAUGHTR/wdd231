@@ -38,10 +38,9 @@
         </section>
         <div class="photo-section-wrapper">
             <section class="student-photo-title">Student Photo</section>
-            <h2>.</h2>
             <section class="profile-container">
                 <div class="photo-frame">
-                    <img class="student-photo" src="images/current-profile-pic.jpg" alt="Photo of Aaron Islas">
+                    <img class="student-photo" src="images/profile-pic.jpg" alt="Photo of Aaron Islas">
                 </div>
             </section>
         </div>
@@ -57,6 +56,18 @@
             <div id="course-list" class="course-list">
                 <!-- Courses will be displayed here -->
             </div>
+            <!-- Course Details Modal -->
+            <dialog id="course-modal">
+                <div class="course-modal-content">
+                    <button class="modal-close" aria-label="Close">✕</button>
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-subject"></p>
+                    <p id="modal-credits"></p>
+                    <p id="modal-cert"></p>
+                    <p id="modal-desc"></p>
+                    <div id="modal-tech" class="modal-tech"></div>
+                </div>
+            </dialog>
         </section>
     </main>
     <footer class="home-footer">

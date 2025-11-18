@@ -119,6 +119,11 @@ function displayCourses(filteredCourses, buttonId) {
             courseElement.classList.add('completed');
         }
         
+        // Add click to open modal with course details
+        courseElement.addEventListener('click', () => {
+            openCourseModal(course);
+        });
+
         courseList.appendChild(courseElement);
     });
 }
@@ -164,3 +169,56 @@ console.log('This file was last modified on: ${lastModified()}');
 
 currentyear();
 lastModified();
+
+// Modal logic
+const courseDialog = document.getElementById('course-modal');
+const modalCloseBtn = courseDialog?.querySelector('.modal-close');
+
+function openCourseModal(course) {
+    if (!courseDialog) return;
+    const titleEl = document.getElementById('modal-title');
+    const subjectEl = document.getElementById('modal-subject');
+    const creditsEl = document.getElementById('modal-credits');
+    const certEl = document.getElementById('modal-cert');
+    const descEl = document.getElementById('modal-desc');
+    const techEl = document.getElementById('modal-tech');
+
+    titleEl.textContent = course.title;
+    subjectEl.textContent = `${course.subject} ${course.number}`;
+    creditsEl.textContent = `Credits: ${course.credits}`;
+    certEl.textContent = `Certificate: ${course.certificate}`;
+    descEl.textContent = course.description;
+    techEl.innerHTML = '';
+    (course.technology || []).forEach(t => {
+        const tag = document.createElement('span');
+        tag.className = 'tech-tag';
+        tag.textContent = t;
+        techEl.appendChild(tag);
+    });
+
+    courseDialog.showModal();
+}
+
+// Close button
+if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', () => courseDialog.close());
+}
+
+// Close when clicking outside content (backdrop click)
+if (courseDialog) {
+    courseDialog.addEventListener('click', (e) => {
+        const rect = courseDialog.getBoundingClientRect();
+        const inDialog = (
+            e.clientX >= rect.left &&
+            e.clientX <= rect.right &&
+            e.clientY >= rect.top &&
+            e.clientY <= rect.bottom
+        );
+        if (!inDialog) courseDialog.close();
+    });
+    // Allow Esc key to close
+    courseDialog.addEventListener('cancel', (e) => {
+        e.preventDefault();
+        courseDialog.close();
+    });
+}
