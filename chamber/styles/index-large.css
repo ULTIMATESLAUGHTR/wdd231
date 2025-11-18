@@ -80,6 +80,7 @@
     .current-nav-item {
         color: var(--primary-bg-color) !important;
         background-color: var(--nav-active-bg);
+        text-decoration: underline;
     }
 
     /* Hide hamburger menu in desktop view */
