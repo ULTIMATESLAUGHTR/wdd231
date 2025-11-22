@@ -32,17 +32,31 @@
   .nav-links a.current-nav-item::before { display:none; }
   .hamburger { display:none; }
   #nav-bar { display:flex; }
-  main { margin-top:170px; padding:2rem; max-width:1200px; margin-left:auto; margin-right:auto; }
+  
+  /* Default main layout for thank you page */
+  main { 
+    margin-top:170px; 
+    padding:2rem; 
+    max-width:1200px; 
+    margin-left:auto; 
+    margin-right:auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: calc(100vh - 170px); 
+  }
 
-  /* Desktop layout: form and cards side-by-side */
-  main {
+  /* Override for join page with grid layout */
+  body:has(.join-form) main,
+  main.join-layout {
     display: grid;
     grid-template-columns: 1fr 400px;
     gap: 2rem;
     align-items: start;
+    justify-content: initial;
   }
 
-  main h1 {
+  main.join-layout h1 {
     grid-column: 1 / -1;
   }
 
@@ -88,84 +102,6 @@
   .membership-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: var(--elevation-3, 0 10px 25px rgba(0,0,0,0.15));
-  }
-
-  /* Thank You Page Desktop Enhancements */
-  .thank-you-container {
-    max-width: 1000px;
-    padding: 2rem;
-  }
-
-  .thank-you-message {
-    padding: 3rem;
-  }
-
-  .thank-you-message h1 {
-    font-size: 2.5rem;
-  }
-
-  .gratitude-text {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-  }
-
-  .application-summary,
-  .next-steps {
-    padding: 2.5rem;
-  }
-
-  .summary-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .summary-item {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem;
-  }
-
-  .field-label {
-    flex: 0 0 40%;
-    margin-right: 1rem;
-  }
-
-  .field-value {
-    flex: 1;
-    text-align: right;
-    font-size: 1.15rem;
-  }
-
-  .steps-list {
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  .step-item {
-    flex-direction: column;
-    text-align: center;
-    flex: 1;
-  }
-
-  .step-number {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    align-self: center;
-  }
-
-  .action-buttons {
-    gap: 1.5rem;
-  }
-
-  .primary-button,
-  .secondary-button {
-    padding: 16px 32px;
-    font-size: 1.1rem;
-    min-width: 180px;
   }
 
   .membership-card h3 {
