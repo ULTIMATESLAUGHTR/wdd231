@@ -1,0 +1,80 @@
+/* Shared design tokens (copied from small.css root) */
+:root {
+	--primary-font: 'Roboto', sans-serif;
+	--secondary-font: 'Ubuntu', sans-serif;
+	--primary-color: #3b82f6; /* Blue */
+	--secondary-color: #334155; /* Slate */
+	--primary-bg-color: #ffffff;
+	--secondary-bg-color: #f1f5f9;
+	--accent-color: #22c55e; /* Green */
+	--nav-active-bg: rgba(255, 255, 255, 0.2);
+	--border-radius: 8px;
+	--transition-speed: 0.3s;
+	--header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	--elevation-1: 0 2px 4px rgba(0,0,0,0.08);
+	--elevation-2: 0 4px 8px rgba(0,0,0,0.12);
+	--elevation-3: 0 6px 12px rgba(0,0,0,0.15);
+	--control-active-bg: #1e3a8a;
+	--control-hover-bg: #1d4ed8;
+}
+@media screen and (min-width:768px) {
+  /* Desktop navigation */
+  .home-header { display:flex; justify-content:space-between; align-items:center; padding:10px 20px; position:fixed; background-color:var(--secondary-bg-color); box-shadow:var(--header-shadow); z-index:1000; min-height:170px; gap:1rem; }
+  .header-brand { display:flex; align-items:center; gap:1rem; flex:0 1 auto; }
+  .chamber-logo { width:150px; height:150px; object-fit:contain; flex-shrink:0; }
+  .header-title { font-size:1.4rem; padding:10px 15px; margin:0; white-space:nowrap; }
+  .navigation { display:block; position:static; width:auto; padding:0; margin-left:auto; }
+  .nav-links { display:flex; flex-direction:row; gap:2rem; padding:1rem 2rem; margin:0; border-radius:var(--border-radius); background-color:var(--secondary-color); border-bottom:none; }
+  .nav-list { margin:0; }
+  .nav-links a { padding:0.5rem 1rem; white-space:nowrap; color:var(--primary-bg-color); font-weight:700; text-shadow:0 1px 1px rgba(0,0,0,0.1); }
+  .nav-links a:hover, .nav-links a:focus { color:var(--primary-bg-color); background-color:var(--primary-color); transform:translateY(-1px); box-shadow: var(--elevation-1); }
+  .nav-links a.current-nav-item { color:var(--primary-bg-color)!important; background-color:var(--nav-active-bg); text-decoration:underline!important; }
+  .nav-links a.current-nav-item::before { display:none; }
+  .hamburger { display:none; }
+  #nav-bar { display:flex; }
+  main { margin-top:170px; padding:2rem; max-width:1200px; margin-left:auto; margin-right:auto; }
+
+  /* Desktop layout: form and cards side-by-side */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  main h1 {
+    grid-column: 1 / -1;
+  }
+
+  .join-form {
+    grid-column: 1;
+  }
+
+  .membership-level-cards {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .membership-card {
+    padding: 1.25rem;
+  }
+
+  .membership-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .membership-modal {
+    max-width: 600px;
+    width: 80vw;
+  }
+
+  .modal-content {
+    padding: 2.5rem;
+  }
+
+  /* Desktop footer adjustments */
+  footer { font-size:1.15rem; padding:16px 20px; min-height:220px; }
+  .social-media-links { gap:2rem; }
+  .social-media-links a, .social-media-links img { width:100px; height:100px; }
+  .chamber-address-info, .footer-info { text-align:left; margin:0.25rem auto; display:block; max-width:900px; }
+}

@@ -3,24 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us Page for NY Chamber of Commerce</title>
     <meta name="author" content="Aaron Islas">
     <meta name="description" content="This is the Join Us page for the NYC Chamber of Commerce assignment of week 4.">
     <meta property="og:title" content="Chamber Directory Page">
     <meta property="og:description" content="This is the directory page for a Chamber of Commerce for the city of New York. It will be used to show local business ">
     <meta property="og:image" content="ultimateslaughtr.github.io/wdd231/chamber/images/og-home-image.jpg">
     <meta property="og:locale" content="en_US">
-    <meta property="og:url" content="https://ultimateslaughtr.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://ultimateslaughtr.github.io/wdd231/chamber/join.html">
+    <script src="scripts/hamburger-nav-menu.js" defer></script>
+    <script src="scripts/update.js" defer></script>
+    <script src="scripts/join.js" defer></script>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/join-small.css">
     <link rel="stylesheet" href="styles/join-large.css" media="(min-width: 768px)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-
-
+    <title>Join Us Page for NY Chamber of Commerce</title>
 </head>
 <body>
-    
+    <header class="home-header">
+        <div class="header-brand">
+            <img class="chamber-logo" src="images/chamber-of-commerce-logo.jpg" alt="Chamber of Commerce Logo" width="150" height="150">
+            <h1 class="header-title">Join Us</h1>
+        </div>
+        <!--This is the JS insert for the Hamburger Button-->
+        <button id="nav-button" class="hamburger" aria-label="navigation"></button>
+    <nav id="nav-bar" class="navigation">
+        <ul class="nav-links">
+            <li class="nav-list"><a href="index.html">Home</a></li>
+            <li class="nav-list"><a href="discover.html">Discover</a></li>
+            <li class="nav-list"><a href="directory.html">Directory</a></li>
+            <li class="nav-list"><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+    <h1>Join the NYC Chamber of Commerce</h1>
+    <section class="join-form">
+        <form method="get" action="thankyou.html">
+            <label for="first-name">
+                First Name:
+                <input type="text" id="first-name" name="first-name" title="First Name" autocomplete="given-name" required>
+            </label>
+            
+            <label for="last-name">
+                Last Name:
+                <input type="text" id="last-name" name="last-name" title="Last Name" autocomplete="family-name" required>
+            </label>
+            
+            <label for="org-title">
+                Organizational Title:
+                <input type="text" id="org-title" name="org-title" title="Organizational Title" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{7,}">
+            </label>
+            
+            <label for="email">
+                Email Address:
+                <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required>
+            </label>
+            
+            <label for="phone">
+                Phone Number:
+                <input type="tel" id="phone" name="phone" title="Phone Number" autocomplete="tel" required>
+            </label>
+            
+            <label for="business-name">
+                Business/Organization Name:
+                <input type="text" id="business-name" name="business-name" title="Business/Organization Name" autocomplete="organization" required>
+            </label>
+            
+            <label for="membership-level">
+                Membership Level:
+                <select id="membership-level" name="membership-level" title="Membership Level" required>
+                    <option value="">Select Membership Level</option>
+                    <option value="np">NP Membership (Non-profit organizations - no fee)</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+            </label>
+            
+            <label for="business-description">
+                Business/Organization Description:
+                <textarea id="business-description" name="business-description" title="Business/Organization Description" rows="4"></textarea>
+            </label>
+            
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+            
+            <input type="submit" value="Send my Application">
+        </form>
+    </section>
+    <section class="membership-level-cards">
+        <div class="membership-card" data-animation-delay="0">
+            <h3>Non-Profit Membership</h3>
+            <p class="membership-price">Free</p>
+            <p>For non-profit organizations</p>
+            <button type="button" class="info-btn" data-modal="np-modal" aria-label="Learn more about NP Membership">Learn More</button>
+        </div>
+        
+        <div class="membership-card" data-animation-delay="100">
+            <h3>Bronze Membership</h3>
+            <p class="membership-price">$$$</p>
+            <p>Basic business benefits</p>
+            <button type="button" class="info-btn" data-modal="bronze-modal" aria-label="Learn more about Bronze Membership">Learn More</button>
+        </div>
+        
+        <div class="membership-card" data-animation-delay="200">
+            <h3>Silver Membership</h3>
+            <p class="membership-price">$$$$</p>
+            <p>Enhanced business benefits</p>
+            <button type="button" class="info-btn" data-modal="silver-modal" aria-label="Learn more about Silver Membership">Learn More</button>
+        </div>
+        
+        <div class="membership-card" data-animation-delay="300">
+            <h3>Gold Membership</h3>
+            <p class="membership-price">$$$$$</p>
+            <p>Premium business benefits</p>
+            <button type="button" class="info-btn" data-modal="gold-modal" aria-label="Learn more about Gold Membership">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Membership Level Modals -->
+    <dialog id="np-modal" class="membership-modal" role="dialog" aria-labelledby="np-title" aria-describedby="np-description">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Non-Profit Membership details">&times;</button>
+            <h2 id="np-title">Non-Profit Membership</h2>
+            <div id="np-description">
+                <p><strong>Cost:</strong> Free</p>
+                <p><strong>Benefits:</strong></p>
+                <ul class="benefits-list">
+                    <li>Basic business listing in member directory</li>
+                    <li>Access to chamber networking events</li>
+                    <li>Monthly newsletter subscription</li>
+                    <li>Community event announcements</li>
+                    <li>Basic business resources and guides</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="bronze-modal" class="membership-modal" role="dialog" aria-labelledby="bronze-title" aria-describedby="bronze-description">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Bronze Membership details">&times;</button>
+            <h2 id="bronze-title">Bronze Membership</h2>
+            <div id="bronze-description">
+                <p><strong>Cost:</strong> $200/year</p>
+                <p><strong>Benefits:</strong></p>
+                <ul class="benefits-list">
+                    <li>All NP benefits included</li>
+                    <li>Enhanced business listing with logo</li>
+                    <li>Priority event registration</li>
+                    <li>Business card displays at chamber office</li>
+                    <li>Ribbon cutting ceremony support</li>
+                    <li>10% discount on chamber event tickets</li>
+                    <li>Access to member-to-member discounts</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="silver-modal" class="membership-modal" role="dialog" aria-labelledby="silver-title" aria-describedby="silver-description">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Silver Membership details">&times;</button>
+            <h2 id="silver-title">Silver Membership</h2>
+            <div id="silver-description">
+                <p><strong>Cost:</strong> $500/year</p>
+                <p><strong>Benefits:</strong></p>
+                <ul class="benefits-list">
+                    <li>All Bronze benefits included</li>
+                    <li>Featured business spotlight opportunities</li>
+                    <li>Social media promotion package</li>
+                    <li>Business referral program participation</li>
+                    <li>Access to exclusive member mixers</li>
+                    <li>20% discount on chamber event tickets</li>
+                    <li>Free workshop attendance (up to 3 per year)</li>
+                    <li>Business consultation services</li>
+                    <li>Website listing with detailed description</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="gold-modal" class="membership-modal" role="dialog" aria-labelledby="gold-title" aria-describedby="gold-description">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Gold Membership details">&times;</button>
+            <h2 id="gold-title">Gold Membership</h2>
+            <div id="gold-description">
+                <p><strong>Cost:</strong> $1,200/year</p>
+                <p><strong>Benefits:</strong></p>
+                <ul class="benefits-list">
+                    <li>All Silver benefits included</li>
+                    <li>Homepage spotlight feature rotation</li>
+                    <li>Premium placement in all chamber publications</li>
+                    <li>Exclusive Gold member events and retreats</li>
+                    <li>Direct business leads and referrals</li>
+                    <li>30% discount on all chamber events</li>
+                    <li>Unlimited workshop attendance</li>
+                    <li>Priority speaking opportunities at events</li>
+                    <li>Custom marketing co-op opportunities</li>
+                    <li>Dedicated account manager</li>
+                    <li>Board of Directors nomination eligibility</li>
+                    <li>Annual business recognition award consideration</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+    </main>
+</body>
+<footer>
+        <p class="chamber-address-info">Chamber of Commerce for New York City</p>
+        <p class="chamber-address-info">20 West 44th Street, NY, NY 10036</p>
+        <p class="chamber-address-info">info@nycchamberofcommerce.com</p>
+        <p class="chamber-address-info">(123) 456-7890</p>
+        <ul class="social-media-links">
+            <li><a href="https://www.youtube.com/nycchamber"><img src="images/youtube-logo.png" alt="Youtube Logo" width="100" height="100"></a></li>
+            <li><a href="https://www.twitter.com/nycchamber"><img src="images/twitter-logo.svg" alt="Twitter Logo" width="100" height="100"></a></li>
+            <li><a href="https://www.linkedin.com/company/nycchamber"><img src="images/linked-in-logo-2.png" alt="LinkedIn Logo" width="100" height="100"></a></li>
+        </ul>
+        <p class="footer-info">WDD231 Class Project</p>
+        <p class="footer-info">Aaron Islas</p>
+        <p class="footer-info">&copy;<span id="currentyear"></span>Chamber of Commerce. All rights reserved.</p>
+        <p class="footer-info">Last Modified: <span id="lastmodified"></span></p>
+    </footer>
 </body>
 </html>
