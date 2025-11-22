@@ -9,7 +9,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize modal functionality
     initializeModals();
+    
+    // Initialize lazy loading and animations
+    initializeLazyAnimations();
 });
+
+// Lazy loading with intersection observer for performance
+function initializeLazyAnimations() {
+    const membershipCards = document.querySelectorAll('.membership-card');
+    
+    if ('IntersectionObserver' in window) {
+        const cardObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Add staggered delay based on card position
+                    setTimeout(() => {
+                        entry.target.style.animationPlayState = 'running';
+                        entry.target.classList.add('animate-in');
+                    }, index * 150); // 150ms stagger between cards
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        membershipCards.forEach(card => {
+            card.style.animationPlayState = 'paused';
+            cardObserver.observe(card);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        membershipCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('animate-in');
+            }, index * 150);
+        });
+    }
+}
 
 // Modal functionality for membership level cards
 function initializeModals() {

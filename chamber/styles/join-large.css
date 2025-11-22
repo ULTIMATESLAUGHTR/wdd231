@@ -46,8 +46,32 @@
     grid-column: 1 / -1;
   }
 
+  /* Desktop form enhancements */
   .join-form {
     grid-column: 1;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    padding: 2.5rem;
+  }
+
+  .join-form form {
+    gap: 24px;
+  }
+
+  .join-form label {
+    gap: 10px;
+  }
+
+  .join-form input,
+  .join-form select,
+  .join-form textarea {
+    padding: 14px 18px;
+    font-size: 1.1rem;
+  }
+
+  .join-form input[type="submit"] {
+    padding: 18px 32px;
+    font-size: 1.2rem;
   }
 
   .membership-level-cards {
@@ -57,6 +81,13 @@
 
   .membership-card {
     padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+  }
+
+  .membership-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--elevation-3, 0 10px 25px rgba(0,0,0,0.15));
   }
 
   .membership-card h3 {

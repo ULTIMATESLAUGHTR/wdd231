@@ -17,6 +17,29 @@
 	--control-active-bg: #1e3a8a;
 	--control-hover-bg: #1d4ed8;
 }
+
+body {
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23000" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+  opacity: 0.3;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* Navigation (mobile) */
 .home-header {
 	display: flex;
@@ -70,6 +93,109 @@
 
 main { margin-top:170px; padding:1rem; }
 
+/* Form Styling */
+.join-form {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--elevation-2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.join-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.join-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: var(--secondary-color);
+  gap: 8px;
+  cursor: pointer;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.join-form input:invalid {
+  border-color: var(--error-color, #ef4444);
+}
+
+.join-form input:valid {
+  border-color: var(--success-color, #22c55e);
+}
+
+.join-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+.join-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.join-form input[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--primary-bg-color);
+  border: none;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  margin-top: 10px;
+}
+
+.join-form input[type="submit"]:hover,
+.join-form input[type="submit"]:focus {
+  background-color: var(--primary-hover-color, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-2);
+}
+
+.join-form input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Hidden fields */
+.join-form input[type="hidden"] {
+  display: none;
+}
+
 /* Membership Cards */
 .membership-level-cards {
   display: flex;
@@ -79,27 +205,41 @@ main { margin-top:170px; padding:1rem; }
 }
 
 .membership-card {
-  background: var(--primary-bg-color);
-  border: 1px solid var(--secondary-bg-color);
+  background: rgba(255, 255, 255, 0.98);
+  border: 2px solid var(--border-color, #e2e8f0);
   border-radius: var(--border-radius);
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   box-shadow: var(--elevation-1);
   transition: all var(--transition-speed);
+  backdrop-filter: blur(5px);
   opacity: 0;
-  transform: translateY(20px);
-  animation: slideInUp 0.6s ease forwards;
+  transform: translateY(40px);
+  animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-play-state: paused;
 }
 
-.membership-card[data-animation-delay="0"] { animation-delay: 0ms; }
-.membership-card[data-animation-delay="100"] { animation-delay: 100ms; }
-.membership-card[data-animation-delay="200"] { animation-delay: 200ms; }
-.membership-card[data-animation-delay="300"] { animation-delay: 300ms; }
+.membership-card.animate-in {
+  animation-play-state: running;
+}
+
+.membership-card:nth-child(1) { animation-delay: 0ms; }
+.membership-card:nth-child(2) { animation-delay: 100ms; }
+.membership-card:nth-child(3) { animation-delay: 200ms; }
+.membership-card:nth-child(4) { animation-delay: 300ms; }
 
 @keyframes slideInUp {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
