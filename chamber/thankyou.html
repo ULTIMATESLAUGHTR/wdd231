@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aaron Islas">
+    <meta name="description" content="Thank you page for the NYC Chamber of Commerce membership application.">
+    <meta property="og:title" content="Thank You - NYC Chamber of Commerce">
+    <meta property="og:description" content="Thank you for your membership application to the NYC Chamber of Commerce.">
+    <meta property="og:image" content="ultimateslaughtr.github.io/wdd231/chamber/images/og-home-image.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://ultimateslaughtr.github.io/wdd231/chamber/thankyou.html">
+    <script src="scripts/hamburger-nav-menu.js" defer></script>
+    <script src="scripts/update.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/join-small.css">
+    <link rel="stylesheet" href="styles/join-large.css" media="(min-width: 768px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <title>Thank You - NYC Chamber of Commerce</title>
+</head>
+<body>
+    <header class="home-header">
+        <div class="header-brand">
+            <img class="chamber-logo" src="images/chamber-of-commerce-logo.jpg" alt="Chamber of Commerce Logo" width="150" height="150">
+            <h1 class="header-title">Thank You!</h1>
+        </div>
+        <!--This is the JS insert for the Hamburger Button-->
+        <button id="nav-button" class="hamburger" aria-label="navigation"></button>
+    <nav id="nav-bar" class="navigation">
+        <ul class="nav-links">
+            <li class="nav-list"><a href="index.html">Home</a></li>
+            <li class="nav-list"><a href="discover.html">Discover</a></li>
+            <li class="nav-list"><a href="directory.html">Directory</a></li>
+            <li class="nav-list"><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <div class="thank-you-container">
+            <section class="thank-you-message">
+                <h1>Application Submitted Successfully!</h1>
+                <p class="gratitude-text">Thank you for your interest in joining the NYC Chamber of Commerce. We have received your membership application and will review it promptly.</p>
+                <div class="success-icon">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" stroke="#22c55e" stroke-width="2" fill="rgba(34, 197, 94, 0.1)"/>
+                        <path d="M8 12.5L11 15.5L16 9.5" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="application-summary">
+                <h2>Application Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="field-label">First Name:</span>
+                        <span class="field-value" id="display-first-name">Not provided</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="field-label">Last Name:</span>
+                        <span class="field-value" id="display-last-name">Not provided</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="field-label">Email Address:</span>
+                        <span class="field-value" id="display-email">Not provided</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="field-label">Phone Number:</span>
+                        <span class="field-value" id="display-phone">Not provided</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="field-label">Business/Organization:</span>
+                        <span class="field-value" id="display-business-name">Not provided</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="field-label">Application Submitted:</span>
+                        <span class="field-value" id="display-timestamp">Not provided</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="next-steps">
+                <h2>What Happens Next?</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Application Review</h3>
+                            <p>Our membership team will review your application within 2-3 business days.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Welcome Package</h3>
+                            <p>Upon approval, you'll receive a welcome email with membership details and resources.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Member Benefits</h3>
+                            <p>Start enjoying member benefits including networking events and business resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="action-buttons">
+                <a href="index.html" class="primary-button">Return to Home</a>
+                <a href="directory.html" class="secondary-button">View Member Directory</a>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p class="chamber-address-info">Chamber of Commerce for New York City</p>
+        <p class="chamber-address-info">20 West 44th Street, NY, NY 10036</p>
+        <p class="chamber-address-info">info@nycchamberofcommerce.com</p>
+        <p class="chamber-address-info">(123) 456-7890</p>
+        <ul class="social-media-links">
+            <li><a href="https://www.youtube.com/nycchamber"><img src="images/youtube-logo.png" alt="Youtube Logo" width="100" height="100"></a></li>
+            <li><a href="https://www.twitter.com/nycchamber"><img src="images/twitter-logo.svg" alt="Twitter Logo" width="100" height="100"></a></li>
+            <li><a href="https://www.linkedin.com/company/nycchamber"><img src="images/linked-in-logo-2.png" alt="LinkedIn Logo" width="100" height="100"></a></li>
+        </ul>
+        <p class="footer-info">WDD231 Class Project</p>
+        <p class="footer-info">Aaron Islas</p>
+        <p class="footer-info">&copy;<span id="currentyear"></span>Chamber of Commerce. All rights reserved.</p>
+        <p class="footer-info">Last Modified: <span id="lastmodified"></span></p>
+    </footer>
+</body>
+</html>
