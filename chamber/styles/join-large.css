@@ -1,22 +1,5 @@
-/* Shared design tokens (copied from small.css root) */
-:root {
-	--primary-font: 'Roboto', sans-serif;
-	--secondary-font: 'Ubuntu', sans-serif;
-	--primary-color: #3b82f6; /* Blue */
-	--secondary-color: #334155; /* Slate */
-	--primary-bg-color: #ffffff;
-	--secondary-bg-color: #f1f5f9;
-	--accent-color: #22c55e; /* Green */
-	--nav-active-bg: rgba(255, 255, 255, 0.2);
-	--border-radius: 8px;
-	--transition-speed: 0.3s;
-	--header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	--elevation-1: 0 2px 4px rgba(0,0,0,0.08);
-	--elevation-2: 0 4px 8px rgba(0,0,0,0.12);
-	--elevation-3: 0 6px 12px rgba(0,0,0,0.15);
-	--control-active-bg: #1e3a8a;
-	--control-hover-bg: #1d4ed8;
-}
+/* Design tokens inherited from join-small.css */
+
 @media screen and (min-width:768px) {
   /* Desktop navigation */
   .home-header { display:flex; justify-content:space-between; align-items:center; padding:10px 20px; position:fixed; background-color:var(--secondary-bg-color); box-shadow:var(--header-shadow); z-index:1000; min-height:170px; gap:1rem; }

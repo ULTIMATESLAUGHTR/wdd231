@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Aaron Islas">
     <meta name="description" content="This is the Join Us page for the NYC Chamber of Commerce assignment of week 4.">
-    <meta property="og:title" content="Chamber Directory Page">
-    <meta property="og:description" content="This is the directory page for a Chamber of Commerce for the city of New York. It will be used to show local business ">
+    <meta property="og:title" content="Chamber Join Page">
+    <meta property="og:description" content="This is the joining page for a Chamber of Commerce for the city of New York. It will be used to show membership options. ">
     <meta property="og:image" content="ultimateslaughtr.github.io/wdd231/chamber/images/og-home-image.jpg">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://ultimateslaughtr.github.io/wdd231/chamber/join.html">
     <script src="scripts/hamburger-nav-menu.js" defer></script>
     <script src="scripts/update.js" defer></script>
     <script src="scripts/join.js" defer></script>
-    <link rel ="icon" href="images/chamber-of-commerce-icon.ico">
+    <link rel="icon" href="images/chamber-of-commerce-icon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/join-small.css">
     <link rel="stylesheet" href="styles/join-large.css" media="(min-width: 768px)">
@@ -40,16 +40,16 @@
     </nav>
     </header>
     <main class="join-layout">
-    <h1>Join the NYC Chamber of Commerce Today!</h1>
+    <h2>Join the NYC Chamber of Commerce Today!</h2>
     <section class="join-form">
         <form method="get" action="thankyou.html">
             <label for="first-name">
-                First Name:
+                *First Name:
                 <input type="text" id="first-name" name="first-name" title="First Name" autocomplete="given-name" required>
             </label>
             
             <label for="last-name">
-                Last Name:
+                *Last Name:
                 <input type="text" id="last-name" name="last-name" title="Last Name" autocomplete="family-name" required>
             </label>
             
@@ -59,22 +59,22 @@
             </label>
             
             <label for="email">
-                Email Address:
+                *Email Address:
                 <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required>
             </label>
             
             <label for="phone">
-                Phone Number:
+                *Phone Number:
                 <input type="tel" id="phone" name="phone" title="Phone Number" autocomplete="tel" required>
             </label>
             
             <label for="business-name">
-                Business/Organization Name:
+                *Business/Organization Name:
                 <input type="text" id="business-name" name="business-name" title="Business/Organization Name" autocomplete="organization" required>
             </label>
             
             <label for="membership-level">
-                Membership Level:
+                *Membership Level:
                 <select id="membership-level" name="membership-level" title="Membership Level" required>
                     <option value="">Select Membership Level</option>
                     <option value="np">NP Membership (Non-profit organizations - no fee)</option>
@@ -206,8 +206,7 @@
         </div>
     </dialog>
     </main>
-</body>
-<footer>
+    <footer>
         <p class="chamber-address-info">Chamber of Commerce for New York City</p>
         <p class="chamber-address-info">20 West 44th Street, NY, NY 10036</p>
         <p class="chamber-address-info">info@nycchamberofcommerce.com</p>

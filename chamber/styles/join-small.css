@@ -140,15 +140,20 @@ main { margin-top:170px; padding:1rem; display: flex; align-items: center; justi
 .join-form textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: inset 0 0 0 2px rgba(59, 130, 246, 0.2);
+  background-color: rgba(59, 130, 246, 0.05);
 }
 
 .join-form input:invalid {
-  border-color: var(--error-color, #ef4444);
+  box-shadow: inset 0 0 0 2px rgba(239, 68, 68, 0.3);
+  background-color: rgba(239, 68, 68, 0.05);
+  border-color: var(--border-color, #e2e8f0);
 }
 
 .join-form input:valid {
-  border-color: var(--success-color, #22c55e);
+  box-shadow: inset 0 0 0 2px rgba(34, 197, 94, 0.3);
+  background-color: rgba(34, 197, 94, 0.05);
+  border-color: var(--border-color, #e2e8f0);
 }
 
 .join-form textarea {
