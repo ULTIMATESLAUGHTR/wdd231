@@ -82,6 +82,10 @@
         background-color: var(--nav-active-bg);
     }
 
+    .current-nav-item::before {
+        display: none;
+    }
+
     /* Hide hamburger menu in desktop view */
     .hamburger {
         display: none;

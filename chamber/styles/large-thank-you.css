@@ -208,4 +208,10 @@
     display: block;
     max-width: 900px;
   }
+
+  /* Desktop footer adjustments */
+  footer { font-size:1.15rem; padding:16px 20px; min-height:220px; }
+  .social-media-links { gap:2rem; }
+  .social-media-links a, .social-media-links img { width:100px; height:100px; }
+  .chamber-address-info, .footer-info { text-align:left; margin:0.25rem auto; display:block; max-width:900px; }
 }
