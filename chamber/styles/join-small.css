@@ -166,6 +166,17 @@ main.join-layout {
   border-color: var(--border-color, #e2e8f0);
 }
 
+/* Specific styling for organizational title field with pattern validation */
+#org-title:invalid {
+  box-shadow: inset 0 0 0 2px rgba(239, 68, 68, 0.4);
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+#org-title:valid {
+  box-shadow: inset 0 0 0 2px rgba(34, 197, 94, 0.4);
+  background-color: rgba(34, 197, 94, 0.08);
+}
+
 .join-form textarea {
   resize: vertical;
   min-height: 100px;
