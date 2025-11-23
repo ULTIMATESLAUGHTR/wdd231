@@ -2,7 +2,7 @@
 :root {
 	--primary-font: 'Roboto', sans-serif;
 	--secondary-font: 'Ubuntu', sans-serif;
-	--primary-color: #3b82f6; /* Blue */
+	--primary-color: #1d4ed8; /* Darker Blue for better contrast */
 	--secondary-color: #334155; /* Slate */
 	--primary-bg-color: #ffffff;
 	--secondary-bg-color: #f1f5f9;
@@ -79,6 +79,7 @@ body::before {
 	background-color:var(--secondary-color);
 	border-bottom:2px solid var(--primary-color);
 	box-shadow: var(--header-shadow);
+	color: var(--primary-bg-color);
 }
 .nav-links a { color:var(--primary-bg-color); text-decoration:none; padding:0.75rem; display:block; font-weight:700; transition:all var(--transition-speed); text-shadow:0 1px 1px rgba(0,0,0,0.1); }
 .nav-links a:hover, .nav-links a:focus { background-color:var(--primary-color); border-radius:var(--border-radius); transform:translateY(-1px); box-shadow: var(--elevation-1); text-decoration:none; }
@@ -92,6 +93,15 @@ body::before {
 .hamburger.show::before { content:"\00D7"; font-size:50px; }
 
 main { margin-top:170px; padding:1rem; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 170px); }
+
+/* Join page mobile layout - vertical stacking */
+main.join-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 2rem;
+}
 
 /* Form Styling */
 .join-form {
@@ -254,7 +264,7 @@ main { margin-top:170px; padding:1rem; display: flex; align-items: center; justi
 }
 
 .membership-card h3 {
-  color: var(--primary-color);
+  color: #1e40af; /* Darker blue for better contrast */
   margin: 0 0 0.5rem;
   font-size: 1.3rem;
 }
@@ -267,7 +277,7 @@ main { margin-top:170px; padding:1rem; display: flex; align-items: center; justi
 }
 
 .info-btn {
-  background: var(--primary-color);
+  background: #1e40af; /* Darker blue for better contrast */
   color: var(--primary-bg-color);
   border: none;
   padding: 0.75rem 1.5rem;
@@ -329,7 +339,7 @@ main { margin-top:170px; padding:1rem; display: flex; align-items: center; justi
 }
 
 .modal-content h2 {
-  color: var(--primary-color);
+  color: #1e40af; /* Darker blue for better contrast */
   margin: 0 0 1rem;
 }
 
