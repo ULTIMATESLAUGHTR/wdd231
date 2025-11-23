@@ -2,107 +2,44 @@
 
 @media screen and (min-width:768px) {
   /* Desktop navigation */
-  .home-header { display:flex; justify-content:space-between; align-items:center; padding:10px 20px; position:fixed; background-color:var(--secondary-bg-color); box-shadow:var(--header-shadow); z-index:1000; min-height:170px; gap:1rem; }
-  .header-brand { display:flex; align-items:center; gap:1rem; flex:0 1 auto; }
-  .chamber-logo { width:150px; height:150px; object-fit:contain; flex-shrink:0; }
-  .header-title { font-size:1.4rem; padding:10px 15px; margin:0; white-space:nowrap; }
+  .header-title { font-size:1.4rem; }
   .navigation { display:block; position:static; width:auto; padding:0; margin-left:auto; }
   .nav-links { display:flex; flex-direction:row; gap:2rem; padding:1rem 2rem; margin:0; border-radius:var(--border-radius); background-color:var(--secondary-color); border-bottom:none; }
-  .nav-list { margin:0; }
-  .nav-links a { padding:0.5rem 1rem; white-space:nowrap; color:var(--primary-bg-color); font-weight:700; text-shadow:0 1px 1px rgba(0,0,0,0.1); }
-  .nav-links a:hover, .nav-links a:focus { color:var(--primary-bg-color); background-color:var(--primary-color); transform:translateY(-1px); box-shadow: var(--elevation-1); }
-  .nav-links a.current-nav-item { color:var(--primary-bg-color)!important; background-color:var(--nav-active-bg); text-decoration:underline!important; }
-  .nav-links a.current-nav-item::before { display:none; }
+  .nav-links a { padding:0.5rem 1rem; white-space:nowrap; }
+  .nav-links a.current-nav-item { background-color:var(--nav-active-bg); }
   .hamburger { display:none; }
   #nav-bar { display:flex; }
   
-  /* Default main layout for thank you page */
-  main { 
-    margin-top:170px; 
-    padding:2rem; 
-    max-width:1200px; 
-    margin-left:auto; 
-    margin-right:auto; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    min-height: calc(100vh - 170px); 
-  }
-
-  /* Override for join page with grid layout */
-  body:has(.join-form) main,
+  /* Join page grid layout override */
   main.join-layout {
     display: grid;
     grid-template-columns: 1fr 400px;
     gap: 2rem;
     align-items: start;
-    justify-content: initial;
   }
 
   main.join-layout h1 {
     grid-column: 1 / -1;
   }
 
-  /* Desktop form enhancements */
   .join-form {
     grid-column: 1;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(15px);
     padding: 2.5rem;
   }
 
-  .join-form form {
-    gap: 24px;
-  }
+  .join-form form { gap: 24px; }
+  .join-form label { gap: 10px; }
+  .join-form input, .join-form select, .join-form textarea { padding: 14px 18px; font-size: 1.1rem; }
+  .join-form input[type="submit"] { padding: 18px 32px; font-size: 1.2rem; }
 
-  .join-form label {
-    gap: 10px;
-  }
-
-  .join-form input,
-  .join-form select,
-  .join-form textarea {
-    padding: 14px 18px;
-    font-size: 1.1rem;
-  }
-
-  .join-form input[type="submit"] {
-    padding: 18px 32px;
-    font-size: 1.2rem;
-  }
-
-  .membership-level-cards {
-    grid-column: 2;
-    margin: 0;
-  }
-
-  .membership-card {
-    padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-  }
-
-  .membership-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--elevation-3, 0 10px 25px rgba(0,0,0,0.15));
-  }
-
-  .membership-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .membership-modal {
-    max-width: 600px;
-    width: 80vw;
-  }
-
-  .modal-content {
-    padding: 2.5rem;
-  }
+  .membership-level-cards { grid-column: 2; margin: 0; }
+  .membership-card { padding: 1.25rem; }
+  .membership-card:hover { transform: translateY(-8px) scale(1.02); }
+  .membership-card h3 { font-size: 1.2rem; }
+  .membership-modal { max-width: 600px; width: 80vw; }
+  .modal-content { padding: 2.5rem; }
 
   /* Desktop footer adjustments */
-  footer { font-size:1.15rem; padding:16px 20px; min-height:220px; }
+  footer { font-size:1.15rem; padding:16px 20px; }
   .social-media-links { gap:2rem; }
-  .social-media-links a, .social-media-links img { width:100px; height:100px; }
-  .chamber-address-info, .footer-info { text-align:left; margin:0.25rem auto; display:block; max-width:900px; }
 }
