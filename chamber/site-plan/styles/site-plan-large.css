@@ -1,0 +1,132 @@
+/* Desktop Responsive Styles - 768px and above */
+
+@media screen and (min-width: 768px) {
+    
+    /* Enhanced Typography for Desktop */
+    header {
+        font-size: 2.5rem;
+        padding: 3rem 2rem;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    h3 {
+        font-size: 2rem;
+    }
+    
+    h4 {
+        font-size: 1.75rem;
+    }
+    
+    /* Enhanced Layout */
+    main {
+        padding: 3rem 2rem;
+    }
+    
+    section {
+        padding: 3rem;
+        margin-bottom: 4rem;
+    }
+    
+    /* Multi-column Layout for Lists */
+    .site-structure ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .site-structure > ul > li {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--accent-color);
+    }
+    
+    .site-structure > ul > li:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    /* Enhanced Color Scheme Display */
+    .color-scheme p {
+        font-size: 1.1rem;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        border-radius: var(--border-radius);
+        background: rgba(255, 255, 255, 0.7);
+        border-left: 4px solid var(--secondary-color);
+    }
+    
+    /* Enhanced Font Scheme Display */
+    .font-scheme p {
+        font-size: 1.1rem;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        border-radius: var(--border-radius);
+        background: rgba(255, 255, 255, 0.7);
+        border-left: 4px solid var(--accent-color);
+    }
+    
+    /* Demonstrate Font Families */
+    .font-scheme p:first-of-type {
+        font-family: var(--primary-font);
+        font-weight: 500;
+    }
+    
+    .font-scheme p:nth-of-type(2) {
+        font-family: var(--secondary-font);
+        font-weight: 400;
+    }
+    
+    /* Footer Enhancements */
+    footer {
+        padding: 3rem 2rem;
+        font-size: 1rem;
+    }
+    
+    footer p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Large Desktop Optimization - 1200px and above */
+@media screen and (min-width: 1200px) {
+    
+    header {
+        font-size: 3rem;
+        padding: 4rem 2rem;
+    }
+    
+    main {
+        padding: 4rem 2rem;
+        max-width: 1400px;
+    }
+    
+    /* Two-column layout for larger screens */
+    .color-scheme,
+    .font-scheme {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+    
+    .color-scheme h2,
+    .font-scheme h3 {
+        grid-column: 1 / -1;
+    }
+    
+    section {
+        padding: 4rem;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+}

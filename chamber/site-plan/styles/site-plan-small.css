@@ -1,0 +1,184 @@
+:root {
+    --primary-font: 'Gluten', sans-serif;
+    --secondary-font: 'Outfit', sans-serif;
+    --primary-font-size: 25px;
+    --secondary-font-size: 20px;
+    --hero-font: 'Kapakana', serif;
+    --primary-color: #F08080;
+    --secondary-color: #F4978E;
+    --primary-bg-color: #FFFFFFF0;
+    --accent-color: #FFB6B6;
+    --footer-media-color: #FBC4AB;
+    --text-dark: #2c2c2c;
+    --text-light: #ffffff;
+    --border-radius: 8px;
+}
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    background-color: var(--primary-bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Typography */
+header {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    margin: 1.5rem 0 1rem;
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Color Scheme Section Styling */
+.color-scheme {
+    background: linear-gradient(135deg, 
+        rgba(240, 128, 128, 0.1), 
+        rgba(244, 151, 142, 0.1));
+    border-left-color: var(--primary-color);
+}
+
+.font-scheme {
+    background: linear-gradient(135deg, 
+        rgba(244, 151, 142, 0.1), 
+        rgba(255, 182, 182, 0.1));
+    border-left-color: var(--secondary-color);
+}
+
+.site-structure {
+    background: linear-gradient(135deg, 
+        rgba(255, 182, 182, 0.1), 
+        rgba(251, 196, 171, 0.1));
+    border-left-color: var(--accent-color);
+}
+
+/* Typography Elements */
+p {
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+strong, bold {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Lists */
+ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+}
+
+ul ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+ul ul li {
+    margin-bottom: 0.25rem;
+    color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+footer a:hover,
+footer a:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Kapakana Font Demonstration only so I can show that it's going to be used. */
+.kapakana-demo {
+    font-family: var(--hero-font);
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-style: italic;
+}
