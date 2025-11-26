@@ -4,12 +4,12 @@
     --primary-font-size: 25px;
     --secondary-font-size: 20px;
     --hero-font: 'Kapakana', serif;
-    --primary-color: #F08080;
-    --secondary-color: #F4978E;
+    --primary-color: #C85A5A; /* Darker for better contrast */
+    --secondary-color: #D67570; /* Darker for better contrast */
     --primary-bg-color: #FFFFFFF0;
-    --accent-color: #FFB6B6;
-    --footer-media-color: #FBC4AB;
-    --text-dark: #2c2c2c;
+    --accent-color: #E68A8A; /* Darker for better contrast */
+    --footer-media-color: #E6A989;
+    --text-dark: #1a1a1a; /* Darker for better contrast */
     --text-light: #ffffff;
     --border-radius: 8px;
 }
@@ -26,8 +26,8 @@ body {
     font-weight: 400;
     background-color: var(--primary-bg-color);
     color: var(--text-dark);
-    line-height: 1.6;
-    font-size: 1rem;
+    line-height: 1.7;
+    font-size: 1.6rem; /* Improved base font size */
 }
 
 /* Typography */
@@ -50,9 +50,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
+    font-size: 2.75rem;
+    color: var(--text-dark); /* Better contrast */
     text-align: center;
+    margin: 2rem 0 1.5rem;
 }
 
 h2 {
@@ -81,8 +82,8 @@ main {
 
 section {
     margin-bottom: 3rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border-left: 4px solid var(--accent-color);
@@ -114,13 +115,15 @@ section {
 p {
     font-family: var(--secondary-font);
     font-weight: 400;
-    margin-bottom: 1rem;
-    text-align: justify;
+    margin-bottom: 1.25rem;
+    text-align: left; 
+    font-size: 1.5rem;
+    line-height: 1.7;
 }
 
-strong, bold {
-    font-weight: 600;
-    color: var(--primary-color);
+strong {
+    font-weight: 700; /* Stronger weight for better accessibility */
+    color: var(--text-dark); /* Better contrast */
 }
 
 /* Lists */
@@ -152,33 +155,39 @@ footer {
     background-color: var(--primary-color);
     color: var(--text-light);
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
     margin-top: 3rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 footer p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
     text-align: center;
+    line-height: 1.6;
 }
 
 footer a {
     color: var(--text-light);
     text-decoration: underline;
+    font-weight: 500;
+    padding: 0.25rem;
+    border-radius: 3px;
 }
 
 footer a:hover,
 footer a:focus {
-    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
+    outline: 2px solid var(--text-light);
+    outline-offset: 2px;
 }
 
 /* Kapakana Font Demonstration only so I can show that it's going to be used. */
 .kapakana-demo {
     font-family: var(--hero-font);
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
     font-style: italic;
 }
