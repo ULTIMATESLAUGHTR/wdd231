@@ -27,7 +27,7 @@ body {
     background-color: var(--primary-bg-color);
     color: var(--text-dark);
     line-height: 1.7;
-    font-size: 1.6rem; /* Improved base font size */
+    font-size: 1.6rem;
 }
 
 /* Typography */
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2.75rem;
-    color: var(--text-dark); /* Better contrast */
+    color: var(--text-dark);
     text-align: center;
     margin: 2rem 0 1.5rem;
 }
@@ -122,8 +122,8 @@ p {
 }
 
 strong {
-    font-weight: 700; /* Stronger weight for better accessibility */
-    color: var(--text-dark); /* Better contrast */
+    font-weight: 700; 
+    color: var(--text-dark);
 }
 
 /* Lists */
