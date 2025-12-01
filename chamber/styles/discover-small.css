@@ -302,6 +302,7 @@
     font-size: 24px;
     text-align: center;
     box-shadow: var(--elevation-1);
+    visibility: hidden;
     /* Prevent layout shift */
     min-height: 60px;
     display: flex;
