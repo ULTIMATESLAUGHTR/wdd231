@@ -7,13 +7,13 @@ export const itemsOfInterest = [
   },
   {
     "name": "Central Park",
-    "address": "New York, NY 10024",
+    "address": "Central Park, Manhattan, NY 10024",
     "description": "A massive urban park in the heart of Manhattan, Central Park offers walking trails, lakes, and iconic landmarks like Bethesda Terrace, the Central Park Zoo, and Strawberry Fields.",
     "image": "central-park.webp"
   },
   {
     "name": "Times Square",
-    "address": "Manhattan, NY 10036",
+    "address": "Times Square, Manhattan, NY 10036",
     "description": "Known for its neon lights and bustling atmosphere, Times Square is the heart of New York's entertainment district. It's famous for Broadway theaters and massive digital billboards.",
     "image": "times-square.webp"
   },
@@ -33,7 +33,7 @@ export const itemsOfInterest = [
     "name": "The Metropolitan Museum of Art",
     "address": "1000 5th Ave, New York, NY 10028",
     "description": "One of the largest and most prestigious art museums in the world, The Met features an extensive collection spanning over 5,000 years of art from various cultures and periods.",
-    "image": "metropolitan-museum.webp"
+    "image": "met-museum.webp"
   },
   {
     "name": "Rockefeller Center",

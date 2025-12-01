@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta name="robots" content="index, follow">
     <script src="scripts/update.js" defer></script>
-    <script src="scripts/discover.js" defer></script>
     <script src="scripts/hamburger-nav-menu.js" defer></script>
-    <script src="scripts/items-of-interest.mjs" type="module" defer></script>
+    <script src="scripts/discover.js" type="module"></script>
     <meta name="author" content="Aaron Islas">
     <meta name="description" content="Discover page for the NYC Chamber of Commerce website.">
     <meta property="og:title" content="Discover NYC - NYC Chamber of Commerce">
@@ -15,9 +16,15 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://ultimateslaughtr.github.io/wdd231/chamber/discover.html">
     <link rel="icon" href="images/chamber-of-commerce-icon.ico">
+    <link rel="preload" href="images/statue-of-liberty.webp" as="image" type="image/webp">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/discover-small.css">
+    <link rel="preload" href="styles/discover-medium.css" as="style" media="(min-width: 641px)" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="styles/discover-large.css" as="style" media="(min-width: 1224px)" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="styles/discover-medium.css" media="(min-width: 641px)">
+        <link rel="stylesheet" href="styles/discover-large.css" media="(min-width: 1224px)">
+    </noscript>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap">
@@ -48,8 +55,11 @@
         <section class="discover-intro">
             <h1>Discover New York City</h1>
             <p>Explore the most iconic attractions that make New York City a world-renowned destination. From historic landmarks to cultural treasures, discover what makes NYC special!</p>
-            <!--Welcome Message will display here, it's going to be under the visit-message div id located in the discover.js file-->
         </section>
+        
+        <div id="visit-message" class="visit-message" style="visibility: hidden;">
+            <!-- Welcome message will be dynamically inserted here by discover.js -->
+        </div>
         
         <section class="discover-cards" id="discover-grid">
             <!-- Cards will be dynamically generated here by discover.js -->

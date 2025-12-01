@@ -1,0 +1,72 @@
+/* Discover Page Large CSS - Desktop View (1025px+) */
+
+@media screen and (min-width: 1025px) {
+  /* Large Screens - Fixed 2x4 Grid Layout */
+  .discover-cards {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: repeat(4, auto) !important;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-areas: 
+      "card-one card-two"
+      "card-three card-four"
+      "card-five card-six"
+      "card-seven card-eight" !important;
+  }
+  
+  /* Ensure cards stay within their assigned grid areas */
+  .discover-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .discover-intro {
+    margin-bottom: 3rem;
+  }
+  
+  .discover-intro h1 {
+    font-size: 3.5rem;
+  }
+  
+  .discover-intro p {
+    font-size: 1.25rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .card-figure {
+    height: 180px;
+  }
+  
+  .discover-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .discover-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Card and button hover effects for large screens */
+  .card-button:hover,
+  .card-button:focus {
+    background: #1e40af;
+    transform: translateY(-1px);
+    box-shadow: var(--elevation-1);
+  }
+  
+  /* Enhanced hover effects for desktop */
+  .discover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-figure img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Large Screen Footer */
+  footer { font-size:1.15rem; padding:16px 20px; }
+  .social-media-links { gap:2rem; }
+}

@@ -1,0 +1,45 @@
+/* Discover Page Medium CSS - Tablet View (641px-1223px) */
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  /* Medium Screens - 2 Column Grid */
+  .discover-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-template-areas: 
+      "card-one card-two"
+      "card-three card-four"
+      "card-five card-six"
+      "card-seven card-eight";
+  }
+  
+  .discover-intro h1 {
+    font-size: 3rem;
+  }
+  
+  .card-figure {
+    height: 180px;
+  }
+  
+  /* Card and button hover effects for medium screens */
+  .discover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--elevation-3);
+  }
+  
+  .card-button:hover,
+  .card-button:focus {
+    background: #1e40af;
+    transform: translateY(-1px);
+    box-shadow: var(--elevation-1);
+  }
+  
+  /* Image hover effect for medium screens */
+  .card-figure img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  /* Medium Screen Footer */
+  footer { font-size:1.15rem; padding:16px 20px; }
+  .social-media-links { gap:2rem; }
+}
