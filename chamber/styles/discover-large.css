@@ -1,24 +1,25 @@
 /* Discover Page Large CSS - Desktop View (1025px+) */
 
 @media screen and (min-width: 1025px) {
-  /* Large Screens - Fixed 2x4 Grid Layout */
+  /* Large Screens - 3x3 Grid Layout for better aspect ratios */
   .discover-cards {
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: repeat(4, auto) !important;
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(3, auto) !important;
+    gap: 3.6rem;
+    max-width: 950px;
     margin: 0 auto;
+    padding: 2.2rem 2.5rem;
     grid-template-areas: 
-      "card-one card-two"
-      "card-three card-four"
-      "card-five card-six"
-      "card-seven card-eight" !important;
+      "card-one card-two card-three"
+      "card-four card-five card-six"
+      "card-seven card-eight ." !important;
   }
   
-  /* Ensure cards stay within their assigned grid areas */
+  /* Ensure cards maintain proper spacing and proportions */
   .discover-card {
     max-width: 100%;
     width: 100%;
+    /* Remove conflicting flex and aspect-ratio that cause overlap */
   }
   
   .discover-intro {
