@@ -48,6 +48,24 @@
         color: var(--text-secondary);
         font-family: var(--secondary-font);
     }
+
+    /* Desktop Learn More Section Styles */
+    .learn-more {
+        padding: 3rem 2rem;
+    }
+
+    .learn-more-title {
+        font-size: 2.5rem;
+        color: var(--text-primary);
+        font-family: var(--primary-font);
+    }
+
+    .learn-more-text,
+    .learn-more p {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        font-family: var(--secondary-font);
+    }
     
     /* Desktop Grid Layout - 3x3 Named Grid */
     .reviews-grid {

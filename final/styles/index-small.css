@@ -14,7 +14,7 @@
     
     /* Background Colors */
     --main-background: #FFFFFFF0;
-    --card-background: #FFFFFF;
+    --card-background: #F4978E;
     --section-background: #FDF5F3;
     --gradient-bg-start: #F8F9FA;
     --gradient-bg-end: #F4F6F8;
@@ -324,6 +324,44 @@ main {
     font-family: var(--secondary-font);
 }
 
+/* Learn More Section Styles */
+.learn-more {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--section-background);
+    margin-top: 3rem;
+}
+
+.learn-more-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.learn-more-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-family: var(--primary-font);
+    font-weight: 600;
+}
+
+.learn-more-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin: 0 auto 1rem auto;
+    line-height: 1.6;
+    font-family: var(--secondary-font);
+}
+
+.learn-more p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: var(--secondary-font);
+}
+
 /* Mobile Grid Layout - 2x5 Named Grid */
 .reviews-grid {
     display: grid;
@@ -395,7 +433,7 @@ main {
 }
 
 .card-back {
-    background: var(--card-background);
+    background: linear-gradient(135deg, #F4978E 0%, #F8A896 100%);
     transform: rotateY(180deg);
     border: 2px solid var(--border-color);
 }
