@@ -8,7 +8,7 @@ function updateCurrentYear() {
 }
 
 function updateLastModified() {
-    const modEl = document.getElementById('lastmodified');
+    const modEl = document.getElementById('lastModified');
     if (modEl) {
         // document.lastModified returns a string; convert then format
         const lastModDate = new Date(document.lastModified);
@@ -17,7 +17,7 @@ function updateLastModified() {
         const d = String(lastModDate.getDate()).padStart(2, '0');
         const hh = String(lastModDate.getHours()).padStart(2, '0');
         const mm = String(lastModDate.getMinutes()).padStart(2, '0');
-        const formatted = `${y}-${m}-${d} ${hh}:${mm}`; // fixed-width to reduce CLS
+        const formatted = `${y}-${m}-${d} ${hh}:${mm}`;
         modEl.textContent = formatted;
     }
 }
@@ -26,22 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCurrentYear();
     updateLastModified();
     console.log(`Footer timestamps updated: year=${new Date().getFullYear()}, lastModified=${document.lastModified}`);
-    
-    // Join button navigation
-    const joinBtn = document.querySelector('.join-button');
-    if (joinBtn) {
-        joinBtn.addEventListener('click', () => {
-            window.location.href = 'join.html';
-        });
-    }
-    
-    // Wayfinding: Mark current page in navigation
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-            link.classList.add('current-nav-item');
-        }
-    });
 });
