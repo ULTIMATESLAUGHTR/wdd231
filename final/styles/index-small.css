@@ -52,7 +52,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: var(--card-background);
+    background: var(--navbar-color);
     box-shadow: 0 2px 10px var(--shadow-medium);
 }
 
@@ -287,6 +287,36 @@ main {
     box-shadow: 0 6px 16px var(--shadow-heavy);
 }
 
+/* Services and About Me Button Styles */
+.services-btn,
+.about-me-btn {
+    background: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--secondary-font);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.5rem;
+    display: inline-block;
+    position: relative;
+}
+
+.services-btn:hover,
+.services-btn:focus,
+.about-me-btn:hover,
+.about-me-btn:focus {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-heavy);
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -333,8 +363,39 @@ main {
 }
 
 .learn-more-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.learn-more-text-container {
+    flex: 1;
+}
+
+.learn-more-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.learn-more-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #F4978E 0%, #F8A896 100%);
+    padding: 9px;
+    cursor: pointer;
+}
+
+.learn-more-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px var(--shadow-heavy);
 }
 
 .learn-more-title {

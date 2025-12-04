@@ -26,4 +26,25 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCurrentYear();
     updateLastModified();
     console.log(`Footer timestamps updated: year=${new Date().getFullYear()}, lastModified=${document.lastModified}`);
+    
+    // Mouse follow effect for learn-more image
+    const learnMoreImage = document.querySelector('.learn-more-image');
+    if (learnMoreImage) {
+        learnMoreImage.addEventListener('mousemove', (e) => {
+            const rect = learnMoreImage.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            const deltaX = (mouseX - centerX) / rect.width * 10;
+            const deltaY = (mouseY - centerY) / rect.height * 10;
+            
+            learnMoreImage.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1.05)`;
+        });
+        
+        learnMoreImage.addEventListener('mouseleave', () => {
+            learnMoreImage.style.transform = '';
+        });
+    }
 });
