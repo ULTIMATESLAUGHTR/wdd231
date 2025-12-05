@@ -1,0 +1,217 @@
+/* Thank You Page Desktop Styles */
+@import url('index-large.css');
+
+@media screen and (min-width: 768px) {
+    /* Desktop Navigation Styles */
+    .navigation {
+        background: var(--navbar-color);
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+        box-shadow: 0 2px 8px var(--shadow-light);
+    }
+
+    .nav-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        height: 100%;
+    }
+
+    /* Adjust main content margin for taller desktop navigation */
+    .main-content {
+        margin-top: 100px;
+    }
+
+    /* Reduce NBK title size for desktop to prevent bloating */
+    .nav-header .nbk-title {
+        font-size: 2.69rem;
+        font-weight: 500;
+    }
+
+    /* Hide hamburger button on desktop */
+    .hamburger {
+        display: none;
+    }
+
+    /* Desktop horizontal navigation */
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        z-index: auto;
+    }
+
+    .nav-list {
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        transform: none;
+    }
+
+    .nav-links a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-family: var(--secondary-font);
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        background: transparent;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background: var(--accent-color);
+        color: var(--text-light);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--shadow-medium);
+    }
+
+    /* Desktop Footer Styles */
+    .site-footer {
+        padding: 3rem 2rem;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        gap: 3rem;
+    }
+
+    .footer-left {
+        flex: 0 0 auto;
+    }
+
+    .footer-logo {
+        height: 100px;
+    }
+
+    .footer-center {
+        flex: 1;
+        text-align: center;
+    }
+
+    .footer-center h3 {
+        font-size: 1.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .social-links {
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-info p {
+        font-size: 1.3rem;
+    }
+
+    .footer-right {
+        flex: 0 0 auto;
+    }
+
+    .footer-gallery-image {
+        height: 120px;
+        width: 120px;
+    }
+    /* Desktop Layout Enhancements */
+    .thank-you-container {
+        max-width: 1000px;
+    }
+    
+    .thank-you-header {
+        padding: 3rem 2rem;
+    }
+    
+    .thank-you-title {
+        font-size: 3.5rem;
+    }
+    
+    .thank-you-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    /* Appointment Details Grid */
+    .details-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    
+    .detail-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+    }
+    
+    .detail-label {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    
+    .detail-value {
+        font-size: 1.2rem;
+        text-align: right;
+    }
+    
+    /* Next Steps Layout */
+    .steps-content {
+        gap: 2.5rem;
+    }
+    
+    .step-item {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    
+    .step-icon {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .step-text h3 {
+        font-size: 1.4rem;
+    }
+    
+    .step-text p {
+        font-size: 1.1rem;
+    }
+    
+    /* Enhanced Button Styling */
+    .home-button {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.2rem;
+    }
+    
+    /* Section Spacing */
+    .appointment-details,
+    .next-steps {
+        padding: 3rem;
+    }
+    
+    .details-title,
+    .steps-title {
+        font-size: 2rem;
+    }
+}

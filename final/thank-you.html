@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Nails by Kim</title>
+    <meta name="description" content="Thank you for booking your appointment with Nails by Kim. Professional nail salon services with personalized care.">
+    <script src="scripts/hamburger-nav-menu.js"></script>
+    <script src="scripts/update.js"></script>
+    <script src="scripts/thank-you-display.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Kapakana&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/thank-you-small.css" rel="stylesheet">
+    <link href="styles/thank-you-large.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-header">
+            <img src="images/nbk-logo-png.png" alt="NBK Nails by Kim Logo" class="nav-logo">
+            <p class="nbk-title">Nails by Kim</p>
+            <button id="nav-button" class="hamburger" aria-label="Toggle navigation menu"></button>
+        </div>
+        <ul id="nav-bar" class="nav-links">
+            <li class="nav-list"><a href="index.html#home-section">Home</a></li>
+            <li class="nav-list"><a href="index.html#services-section">Services</a></li>
+            <li class="nav-list"><a href="index.html#about-me-section">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Thank You Section -->
+        <section class="thank-you-section">
+            <div class="thank-you-container">
+                <div class="thank-you-header">
+                    <h1 class="thank-you-title">Thank You!</h1>
+                    <p class="thank-you-subtitle">Your appointment request has been successfully submitted.</p>
+                </div>
+                
+                <div class="appointment-details" id="appointment-details">
+                    <h2 class="details-title">Appointment Details</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value" id="client-name-display"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Phone:</span>
+                            <span class="detail-value" id="client-phone-display"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value" id="client-email-display"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Date:</span>
+                            <span class="detail-value" id="appointment-date-display"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Service:</span>
+                            <span class="detail-value" id="service-type-display"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Own Equipment:</span>
+                            <span class="detail-value" id="own-equipment-display"></span>
+                        </div>
+                        <div class="detail-item full-width" id="comments-section" style="display: none;">
+                            <span class="detail-label">Comments:</span>
+                            <span class="detail-value" id="comments-display"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Submitted:</span>
+                            <span class="detail-value" id="submission-date"></span>
+                        </div>
+                    </div>
+                </div>  
+                <div class="next-steps">
+                    <h2 class="steps-title">Next Steps</h2>
+                    <div class="steps-content">
+                        <div class="step-item">
+                            <div class="step-icon phone-icon">☎</div>
+                            <div class="step-text">
+                                <h3>Phone Confirmation</h3>
+                                <p>We will contact you within 48 hours or sooner at - <strong id="contact-phone"></strong> to confirm your appointment details.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon">📧</div>
+                            <div class="step-text">
+                                <h3>Email Confirmation</h3>
+                                <p>A confirmation email with a copy of your submitted information will be sent to -<strong id="contact-email"></strong>.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon">💅</div>
+                            <div class="step-text">
+                                <h3>Prepare for Your Visit</h3>
+                                <p>I look forward to providing you with exceptional nail care services. Please arrive 10 minutes early for your appointment and notify me if any changes need to be made as soon as possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="return-home">
+                    <a href="index.html" class="home-button">Return to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="images/nbk-logo-png.png" alt="NBK Nails by Kim Logo" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <h3>Follow NBK on Social Media!</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/nailsbykimNBK" aria-label="Follow NBK on Facebook"><img src="images/facebook-logo.svg" alt="Facebook" class="social-icon"></a>
+                    <a href="https://www.instagram.com/nailsbykimNBK" aria-label="Follow NBK on Instagram"><img src="images/instagram-logo.png" alt="Instagram" class="social-icon"></a>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; <span id="currentyear"></span> NBK - Nails by Kim. All Rights Reserved.</p>
+                    <p>Last Modified: <span id="lastModified"></span></p>
+                    <p>&#10070; Aaron Islas &#10070; Utah, United States of America &#10070;</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <img src="images/galaxy-nails.webp" alt="Galaxy Nails Artwork" class="footer-gallery-image">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

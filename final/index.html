@@ -9,6 +9,7 @@
     <script src="scripts/update.js" defer></script>
     <script src="scripts/hamburger-nav-menu.js" defer></script>
     <script src="scripts/reviews.js" type="module" defer></script>
+    <script src="scripts/submit-form.js" defer></script>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/index-small.css">
     <link rel="stylesheet" href="styles/index-large.css" media="(min-width: 768px)">
@@ -59,7 +60,7 @@
     <section class="learn-more">
         <div class="learn-more-content">
             <div class="learn-more-text-container">
-                <h2 class="learn-more-title">Learn More About NBK Nails by Kim</h2>
+                <h2 class="learn-more-title">Learn More About "Nails by Kim"</h2>
                 <p class="learn-more-text">At NBK, I aim to deliver top-notch nail care services tailored to your unique style and preferences. Whether you're looking for a classic manicure, trendy nail art, I can make it happen! Discover my services, or if you want to learn more about me, you can also view my career profile.</p>
                 <button class="services-btn">View Services</button>
                 <button class="about-me-btn">About Me</button>
@@ -93,5 +94,74 @@
         </div>
     </div>
 </footer>
+
+<!-- Booking Modal -->
+<div id="booking-modal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2>Book Your Appointment</h2>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div class="form-error-message" id="form-error-message" style="display: none;">
+                Please fill out all required fields before submitting.
+            </div>
+            <form id="booking-form" class="booking-form">
+                <div class="form-group">
+                    <label for="client-name">Full Name *</label>
+                    <input type="text" id="client-name" name="clientName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-phone">Phone Number *</label>
+                    <input type="tel" id="client-phone" name="clientPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-email">Email Address *</label>
+                    <input type="email" id="client-email" name="clientEmail" placeholder="example@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointment-date">Preferred Date *</label>
+                    <input type="date" id="appointment-date" name="appointmentDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-type">Service Type *</label>
+                    <select id="service-type" name="serviceType" required>
+                        <option value="">Select a service...</option>
+                        <option value="classic-manicure">Classic Manicure</option>
+                        <option value="gel-manicure">Gel Manicure</option>
+                        <option value="nail-art">Custom Nail Art</option>
+                        <option value="french-tips">French Tips</option>
+                        <option value="acrylic-nails">Acrylic Nails</option>
+                        <option value="consultation">Consultation</option>
+                    </select>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="own-equipment" name="ownEquipment" value="yes">
+                        <span class="checkmark"></span>
+                        I will be providing my own equipment (example: nails, polish/styling supplies)
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Comments (Optional)</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Any additional details about your service request..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Book My Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/submit-form.js" defer></script>
 </body>
 </html>

@@ -333,4 +333,49 @@
         width: 120px;
     }
     
+    /* Desktop Modal Enhancements */
+    .modal-container {
+        max-width: 600px;
+        max-height: 85vh;
+    }
+    
+    .modal-header {
+        padding: 2rem 2.5rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .modal-content {
+        padding: 2.5rem;
+    }
+    
+    .booking-form {
+        gap: 2rem;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1.1rem;
+        padding: 1rem 1.25rem;
+    }
+    
+    .form-actions {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+    
+    .cancel-btn,
+    .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        min-width: 140px;
+    }
+    
 }
