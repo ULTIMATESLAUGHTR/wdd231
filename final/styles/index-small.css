@@ -318,6 +318,25 @@ main {
     box-shadow: 0 6px 16px var(--shadow-heavy);
 }
 
+/* Ensure anchor tags inside buttons inherit button text color */
+.services-btn a,
+.about-me-btn a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.services-btn a:visited,
+.about-me-btn a:visited,
+.services-btn a:hover,
+.about-me-btn a:hover,
+.services-btn a:focus,
+.about-me-btn a:focus,
+.services-btn a:active,
+.about-me-btn a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
