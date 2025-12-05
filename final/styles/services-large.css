@@ -1,0 +1,367 @@
+/* Services Page Desktop Styles */
+@import url('index-large.css');
+
+@media screen and (min-width: 768px) {
+    /* Desktop Navigation Styles */
+    .navigation {
+        background: var(--navbar-color);
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+        box-shadow: 0 2px 8px var(--shadow-light);
+    }
+
+    .nav-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        height: 100%;
+    }
+
+    /* Adjust main content margin for taller desktop navigation */
+    main {
+        margin-top: 100px;
+    }
+
+    /* Reduce NBK title size for desktop to prevent bloating */
+    .nav-header .nbk-title {
+        font-size: 2.69rem;
+        font-weight: 500;
+    }
+
+    /* Hide hamburger button on desktop */
+    .hamburger {
+        display: none;
+    }
+
+    /* Desktop horizontal navigation */
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        z-index: auto;
+    }
+
+    .nav-list {
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        transform: none;
+    }
+
+    .nav-links a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-family: var(--secondary-font);
+        font-weight: 500;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        display: block;
+        text-align: center;
+        position: relative;
+    }
+
+    /* Desktop hover effects with wayfinding indicators */
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background: var(--accent-color);
+        color: var(--text-light);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--shadow-medium);
+    }
+
+    /* Underline effect for active page */
+    .nav-links a.active {
+        color: var(--text-light);
+    }
+
+    .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 3px;
+        background: var(--text-light);
+        border-radius: 2px;
+    }
+
+    /* Hover underline effect for non-active links */
+    .nav-links a:not(.active)::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 3px;
+        background: var(--text-light);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:not(.active):hover::after {
+        width: 80%;
+    }
+
+    /* Remove overlay effects for desktop */
+    .nav-links.show::after {
+        display: none;
+    }
+
+    /* Desktop Footer Styles */
+    .site-footer {
+        padding: 3rem 2rem;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        gap: 3rem;
+    }
+
+    .footer-left {
+        flex: 0 0 auto;
+    }
+
+    .footer-logo {
+        height: 100px;
+    }
+
+    .footer-center {
+        flex: 1;
+        text-align: center;
+    }
+
+    .footer-center h3 {
+        font-size: 1.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .social-links {
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-info p {
+        font-size: 1.3rem;
+    }
+
+    .footer-right {
+        flex: 0 0 auto;
+    }
+
+    .footer-gallery-image {
+        height: 120px;
+        width: 120px;
+    }
+    
+    /* Desktop Modal Enhancements */
+    .modal-container {
+        max-width: 600px;
+        max-height: 85vh;
+    }
+    
+    .modal-header {
+        padding: 2rem 2.5rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .modal-content {
+        padding: 2.5rem;
+    }
+    
+    .booking-form {
+        gap: 2rem;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1.1rem;
+        padding: 1rem 1.25rem;
+    }
+    
+    .form-actions {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+    
+    .cancel-btn,
+    .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        min-width: 140px;
+    }
+
+    /* Service Cards Styles - Desktop */
+    .services-section {
+        padding: 3rem 2rem;
+    }
+
+    .services-header {
+        padding: 4rem 3rem; /* Increased padding for desktop */
+        margin-bottom: 3rem; /* More space before cards */
+    }
+
+    .services-title {
+        font-size: 3rem;
+    }
+
+    .services-subtitle {
+        font-size: 1.2rem;
+    }
+
+    /* Desktop Book Now Button */
+    .book-now-btn {
+        font-size: 1.3rem;
+        padding: 1.2rem 2.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.3rem; /* Increased by 15% from 2rem */
+        margin-top: 3rem;
+    }
+
+    .service-card {
+        min-height: 420px; /* Increased from 336px for better text accommodation */
+    }
+
+    .service-card-inner {
+        min-height: 420px; /* Increased from 336px for better text accommodation */
+    }
+
+    .service-card-front,
+    .service-card-back {
+        min-height: 420px; /* Increased from 336px for better text accommodation */
+    }
+
+    .service-card-front {
+        padding: 2.5rem; /* Increased padding for more text space */
+    }
+
+    .service-name {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-price {
+        font-size: 1.3rem;
+    }
+
+    .service-name-overlay {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .service-price-overlay {
+        font-size: 1.2rem;
+    }
+
+    .service-overlay {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    /* Enhanced Desktop Hover Effects */
+    .service-card:hover .service-card-front {
+        box-shadow: 0 12px 35px var(--shadow-heavy);
+    }
+
+    .service-card:hover .service-card-back {
+        box-shadow: 0 20px 45px rgba(240, 128, 128, 0.5);
+    }
+}
+
+/* Service Cards Styles - Desktop */
+@media screen and (min-width: 768px) {
+    .services-section {
+        padding: 3rem 2rem;
+    }
+
+    .services-title {
+        font-size: 3rem;
+    }
+
+    .services-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.3rem; /* Increased by 15% from 2rem */
+        margin-top: 3rem;
+        max-width: 1400px; /* Increased container width for wider cards */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-card {
+        min-height: 420px; /* Increased from 336px for better text accommodation */
+        min-width: 350px; /* Added minimum width for better text space */
+    }
+
+    .service-card-inner {
+        min-height: 420px; /* Increased from 336px for better text accommodation */
+        min-width: 350px; /* Added minimum width */
+    }
+
+    .service-card-front,
+    .service-card-back {
+        min-height: 420px; /* Increased from 336px for better text accommodation */
+        min-width: 350px; /* Added minimum width */
+    }
+
+    .service-card-front {
+        padding: 2.5rem 3rem; /* Increased horizontal padding for wider cards */
+    }
+
+    .service-name {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem; /* Increased margin for better spacing */
+    }
+
+    .service-description {
+        font-size: 1rem;
+        margin-bottom: 1.8rem; /* Increased margin for better spacing */
+        line-height: 1.6; /* Improved line height for readability */
+    }
+
+    .service-price {
+        font-size: 1.3rem;
+        margin-top: auto; /* Ensure price stays at bottom */
+    }
+}

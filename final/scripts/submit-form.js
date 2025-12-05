@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
         checkFormValidity(); // Check initial state
     };
     
+    // Make openModal globally accessible for external calls
+    window.openBookingModal = openModal;
+    
     // Close modal
     const closeModal = () => {
         modal.style.display = 'none';
