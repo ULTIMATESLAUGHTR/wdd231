@@ -321,10 +321,10 @@
     }
 
     .services-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2x5 grid for smaller desktop */
         gap: 2.3rem; /* Increased by 15% from 2rem */
         margin-top: 3rem;
-        max-width: 1400px; /* Increased container width for wider cards */
+        max-width: 1000px; /* Reduced width to prevent horizontal scroll */
         margin-left: auto;
         margin-right: auto;
     }
@@ -363,5 +363,31 @@
     .service-price {
         font-size: 1.3rem;
         margin-top: auto; /* Ensure price stays at bottom */
+    }
+}
+
+/* Large Desktop: 3x3 grid (1200px and above) */
+@media screen and (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3x3 grid for large screens */
+        max-width: 1400px; /* Increased container width for 3 columns */
+        gap: 2.5rem; /* Slightly larger gap for 3-column layout */
+    }
+
+    .service-card {
+        min-width: 320px; /* Slightly smaller min-width for 3-column fit */
+    }
+
+    .service-card-inner {
+        min-width: 320px;
+    }
+
+    .service-card-front,
+    .service-card-back {
+        min-width: 320px;
+    }
+
+    .service-card-front {
+        padding: 2.5rem 2.5rem; /* Balanced padding for 3-column layout */
     }
 }
