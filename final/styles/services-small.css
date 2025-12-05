@@ -351,6 +351,7 @@ main {
     font-weight: 600;
     text-align: center;
     animation: shake 0.5s ease-in-out;
+    display: none; /* Hidden by default */
 }
 
 @keyframes shake {

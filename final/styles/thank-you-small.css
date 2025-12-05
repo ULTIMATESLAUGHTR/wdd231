@@ -346,6 +346,11 @@ body.nav-open {
     grid-column: 1 / -1;
 }
 
+/* Comments section hidden by default, shown via JavaScript when comments exist */
+#comments-section {
+    display: none;
+}
+
 .detail-label {
     font-family: var(--secondary-font);
     font-weight: 600;
